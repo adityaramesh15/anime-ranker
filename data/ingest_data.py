@@ -2,7 +2,7 @@ import requests
 import json
 import time
 
-def fetch_top_anime(pages=3, per_page=50):
+def fetch_top_anime(pages=4, per_page=50):
     url = 'https://graphql.anilist.co'
     query = '''
     query ($page: Int, $perPage: Int) {

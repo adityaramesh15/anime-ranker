@@ -7628,5 +7628,2179 @@
                 }
             ]
         }
+    },
+    {
+        "id": 130298,
+        "title": {
+            "romaji": "Kage no Jitsuryokusha ni Naritakute!",
+            "english": "The Eminence in Shadow"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 108428,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 106758,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 156001,
+                        "format": "ONA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 161964,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 194447,
+                        "format": "TV_SHORT"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 20799,
+        "title": {
+            "romaji": "JoJo no Kimyou na Bouken: Stardust Crusaders - Egypt-hen",
+            "english": "JoJo's Bizarre Adventure: Stardust Crusaders - Battle in Egypt"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 20474,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 30872,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 666,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 665,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 21450,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 124845,
+        "title": {
+            "romaji": "Wonder Egg Priority",
+            "english": "WONDER EGG PRIORITY"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 131773,
+                        "format": "SPECIAL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 99539,
+        "title": {
+            "romaji": "Nanatsu no Taizai: Imashime no Fukkatsu",
+            "english": "The Seven Deadly Sins: Revival of the Commandments"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 74485,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 104175,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 108928,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 99540,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 21385,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 20661,
+        "title": {
+            "romaji": "Zankyou no Terror",
+            "english": "Terror in Resonance"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": []
+        }
+    },
+    {
+        "id": 100182,
+        "title": {
+            "romaji": "Sword Art Online: Alicization",
+            "english": "Sword Art Online: Alicization"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 21403,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 51479,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 108759,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 118707,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 97362,
+                        "format": "MANGA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 7054,
+        "title": {
+            "romaji": "Kaichou wa Maid-sama!",
+            "english": "Maid-Sama!"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 32921,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 9366,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 10298,
+                        "format": "SPECIAL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 125367,
+        "title": {
+            "romaji": "Kaguya-sama wa Kokurasetai: Ultra Romantic",
+            "english": "Kaguya-sama: Love is War -Ultra Romantic-"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 86635,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 112641,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 151384,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 165557,
+                        "format": "ONA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 8074,
+        "title": {
+            "romaji": "Gakuen Mokushiroku: HIGHSCHOOL OF THE DEAD",
+            "english": "High School of the Dead"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 30669,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 9515,
+                        "format": "OVA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 11771,
+        "title": {
+            "romaji": "Kuroko no Basket",
+            "english": "Kuroko's Basketball"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 16916,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 16894,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 41652,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 17259,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "OTHER",
+                    "node": {
+                        "id": 15487,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "SUMMARY",
+                    "node": {
+                        "id": 102093,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 19669,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 156053,
+                        "format": "MUSIC"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 21170,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 18153,
+        "title": {
+            "romaji": "Kyoukai no Kanata",
+            "english": "Beyond the Boundary"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 80117,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 20531,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 20779,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 20963,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 20524,
+                        "format": "ONA"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 17813,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "SUMMARY",
+                    "node": {
+                        "id": 20768,
+                        "format": "MOVIE"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 523,
+        "title": {
+            "romaji": "Tonari no Totoro",
+            "english": "My Neighbor Totoro"
+        },
+        "format": "MOVIE",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 2488,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 145,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 176496,
+        "title": {
+            "romaji": "Ore dake Level Up na Ken: Season 2 - Arise from the Shadow",
+            "english": "Solo Leveling Season 2 -Arise from the Shadow-"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 105398,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 151807,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 184694,
+                        "format": "MOVIE"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 205,
+        "title": {
+            "romaji": "Samurai Champloo",
+            "english": "Samurai Champloo"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 30512,
+                        "format": "MANGA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 5680,
+        "title": {
+            "romaji": "K-ON!",
+            "english": "K-ON!"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 7791,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 43001,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 6862,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 7017,
+                        "format": "SPECIAL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 13759,
+        "title": {
+            "romaji": "Sakurasou no Pet na Kanojo",
+            "english": "The Pet Girl of Sakurasou"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 60051,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 58107,
+                        "format": "MANGA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 226,
+        "title": {
+            "romaji": "Elfen Lied",
+            "english": "Elfen Lied"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 30933,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 376,
+                        "format": "OVA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 20698,
+        "title": {
+            "romaji": "Yahari Ore no Seishun Love Come wa Machigatteiru. Zoku",
+            "english": "My Teen Romantic Comedy SNAFU TOO!"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 14813,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 21769,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 108489,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 70171,
+                        "format": "NOVEL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 151801,
+        "title": {
+            "romaji": "MASHLE",
+            "english": "MASHLE: MAGIC AND MUSCLES"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 114960,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 166610,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 18897,
+        "title": {
+            "romaji": "Nisekoi",
+            "english": "Nisekoi"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 61499,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 20728,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 20876,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "OTHER",
+                    "node": {
+                        "id": 106495,
+                        "format": "ONA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 19603,
+        "title": {
+            "romaji": "Fate/stay night: Unlimited Blade Works",
+            "english": "Fate/stay night: Unlimited Blade Works"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 356,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 11741,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 20792,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SPIN_OFF",
+                    "node": {
+                        "id": 14829,
+                        "format": "ONA"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 6922,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 20791,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 10012,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 98035,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 131587,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 21717,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 12565,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 97815,
+                        "format": "SPECIAL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 120697,
+        "title": {
+            "romaji": "Ijiranaide, Nagatoro-san",
+            "english": "DON'T TOY WITH ME, MISS NAGATORO"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 100664,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 140596,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 121,
+        "title": {
+            "romaji": "Hagane no Renkinjutsushi",
+            "english": "Fullmetal Alchemist"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 430,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 30025,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 908,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SUMMARY",
+                    "node": {
+                        "id": 664,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 5114,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 34658,
+                        "format": "NOVEL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 21518,
+        "title": {
+            "romaji": "Shokugeki no Souma: Ni no Sara",
+            "english": "Food Wars! The Second Plate"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 20923,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 75757,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 98702,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 99255,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 153288,
+        "title": {
+            "romaji": "Kaijuu 8-gou",
+            "english": "Kaiju No. 8"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 120760,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 178754,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SUMMARY",
+                    "node": {
+                        "id": 179998,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 179999,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 186300,
+                        "format": "ONA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 141391,
+        "title": {
+            "romaji": "Yofukashi no Uta",
+            "english": "Call of the Night"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 111233,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 150583,
+                        "format": "ONA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 175914,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 98437,
+        "title": {
+            "romaji": "Overlord II",
+            "english": "Overlord II"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 20832,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 85976,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 101083,
+                        "format": "ONA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 101474,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 85934,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 98874,
+                        "format": "MOVIE"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 21613,
+        "title": {
+            "romaji": "Youjo Senki",
+            "english": "Saga of Tanya the Evil"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 94846,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 98186,
+                        "format": "ONA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 100878,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 104454,
+                        "format": "TV_SHORT"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 110178,
+                        "format": "TV_SHORT"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 97216,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 135866,
+                        "format": "ONA"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 117074,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 194447,
+                        "format": "TV_SHORT"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 107660,
+        "title": {
+            "romaji": "BEASTARS",
+            "english": "BEASTARS"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 98587,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 114194,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 4898,
+        "title": {
+            "romaji": "Kuroshitsuji",
+            "english": "Black Butler"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 6707,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 33866,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 6793,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 20606,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 136430,
+        "title": {
+            "romaji": "VINLAND SAGA SEASON 2",
+            "english": "Vinland Saga Season 2"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 30642,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 101348,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 161923,
+                        "format": "ONA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 165056,
+                        "format": "ONA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 17895,
+        "title": {
+            "romaji": "Golden Time",
+            "english": "Golden Time"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 51485,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 66873,
+                        "format": "MANGA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 112301,
+        "title": {
+            "romaji": "Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou",
+            "english": "The Misfit of Demon King Academy: History’s Strongest Demon King Reincarnates and Goes to School with His Descendants"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 106599,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 106601,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 130588,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 14227,
+        "title": {
+            "romaji": "Tonari no Kaibutsu-kun",
+            "english": "My Little Monster"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 43702,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SPIN_OFF",
+                    "node": {
+                        "id": 16866,
+                        "format": "OVA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 139630,
+        "title": {
+            "romaji": "Boku no Hero Academia 6",
+            "english": "My Hero Academia Season 6"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 85486,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 117193,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "OTHER",
+                    "node": {
+                        "id": 161981,
+                        "format": "MUSIC"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 163139,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 169402,
+                        "format": "OVA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 116742,
+        "title": {
+            "romaji": "Tensei Shitara Slime Datta Ken 2nd Season Part 2",
+            "english": "That Time I Got Reincarnated as a Slime Season 2 Part 2"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 108511,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 86355,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "OTHER",
+                    "node": {
+                        "id": 139498,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 86399,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 156822,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 166381,
+                        "format": "ONA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 20872,
+        "title": {
+            "romaji": "Plastic Memories",
+            "english": "Plastic Memories"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "SPIN_OFF",
+                    "node": {
+                        "id": 95221,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 122492,
+                        "format": "NOVEL"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 20458,
+        "title": {
+            "romaji": "Mahouka Koukou no Rettousei",
+            "english": "The Irregular at Magic High School"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "OTHER",
+                    "node": {
+                        "id": 20679,
+                        "format": "ONA"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 64127,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 63699,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SPIN_OFF",
+                    "node": {
+                        "id": 127688,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 112300,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 21685,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 130389,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 85196,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 100196,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 107825,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 86053,
+                        "format": "MANGA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 813,
+        "title": {
+            "romaji": "Dragon Ball Z",
+            "english": "Dragon Ball Z"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 223,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 225,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 30042,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 894,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 895,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 896,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 897,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 898,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 899,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 900,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 901,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 902,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 903,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 904,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 905,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 906,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 984,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 985,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 5152,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 6714,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 12231,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 14837,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 6033,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 20635,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 20778,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 21175,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 102431,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 106492,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 107256,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 10017,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 21,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 986,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 138864,
+                        "format": "SPECIAL"
+                    }
+                },
+                {
+                    "relationType": "OTHER",
+                    "node": {
+                        "id": 167496,
+                        "format": "ONE_SHOT"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 170083,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 206814,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 853,
+        "title": {
+            "romaji": "Ouran Koukou Host Club",
+            "english": "Ouran High School Host Club"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 30030,
+                        "format": "MANGA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 140439,
+        "title": {
+            "romaji": "Mob Psycho 100 III",
+            "english": "Mob Psycho 100 III"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 101338,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 85189,
+                        "format": "MANGA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 166240,
+        "title": {
+            "romaji": "Kimetsu no Yaiba: Hashira Geiko-hen",
+            "english": "Demon Slayer: Kimetsu no Yaiba Hashira Training Arc"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 145139,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 87216,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 178788,
+                        "format": "MOVIE"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 113538,
+        "title": {
+            "romaji": "Haikyuu!! TO THE TOP 2",
+            "english": "HAIKYU!! TO THE TOP Part 2"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 106625,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 65243,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 153658,
+                        "format": "MOVIE"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 104157,
+        "title": {
+            "romaji": "Seishun Buta Yarou wa Yumemiru Shoujo no Yume wo Minai",
+            "english": "Rascal Does Not Dream of a Dreaming Girl"
+        },
+        "format": "MOVIE",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 101291,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 145163,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 145164,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 154967,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 163685,
+                        "format": "MANGA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 21049,
+        "title": {
+            "romaji": "ReLIFE",
+            "english": "ReLIFE"
+        },
+        "format": "ONA",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 85849,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 98635,
+                        "format": "OVA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 130003,
+        "title": {
+            "romaji": "Bocchi the Rock!",
+            "english": "BOCCHI THE ROCK!"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 111258,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 127549,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SUMMARY",
+                    "node": {
+                        "id": 165253,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SUMMARY",
+                    "node": {
+                        "id": 171099,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 186712,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 6880,
+        "title": {
+            "romaji": "Deadman Wonderland",
+            "english": "Deadman Wonderland"
+        },
+        "format": "TV",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 33986,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 10418,
+                        "format": "OVA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 32,
+        "title": {
+            "romaji": "Shin Seiki Evangelion Movie: Air / Magokoro wo, Kimi ni",
+            "english": "Neon Genesis Evangelion: The End of Evangelion"
+        },
+        "format": "MOVIE",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 30,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 2759,
+                        "format": "MOVIE"
+                    }
+                },
+                {
+                    "relationType": "SUMMARY",
+                    "node": {
+                        "id": 31,
+                        "format": "MOVIE"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 1689,
+        "title": {
+            "romaji": "Byousoku 5 Centimeter",
+            "english": "5 Centimeters per Second"
+        },
+        "format": "MOVIE",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "SUMMARY",
+                    "node": {
+                        "id": 99646,
+                        "format": "MUSIC"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 53419,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 1004,
+                        "format": "OVA"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "id": 16782,
+        "title": {
+            "romaji": "Kotonoha no Niwa",
+            "english": "The Garden of Words"
+        },
+        "format": "MOVIE",
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 81747,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "CHARACTER",
+                    "node": {
+                        "id": 21519,
+                        "format": "MOVIE"
+                    }
+                }
+            ]
+        }
     }
 ]
