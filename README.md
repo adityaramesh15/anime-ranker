@@ -2,7 +2,7 @@
 
 # Anime Ranker
 
-A full-stack, serverless web application that allows users to rank the top 150 anime franchises through head-to-head, Elo-based matchups. 
+A full-stack, serverless web application that allows users to rank the top 150 anime franchises through head-to-head, Elo-based matchups. Try it out [here!](https://show-ranker-project.web.app/)
 
 ## Architecture & Tech Stack
 * **Frontend:** HTML, CSS, JavaScript (Vanilla) hosted on **Firebase Hosting**.
@@ -46,7 +46,7 @@ To optimize database reads and stay within GCP Free Tier limits, the backend uti
 4. The local memory cache is patched with the new scores, avoiding the need for a full database re-fetch.
 5. The Leaderboard page performs a fresh query to ensure eventual consistency for all users.
 
-## Local Development Setup
+## 🛠️ Local Development Setup
 
 ### 1. Backend
 ```bash
@@ -68,7 +68,7 @@ python app.py
 ### 2. Frontend
 Since the frontend uses standard web APIs, simply open `frontend/index.html` in your web browser. Ensure the `API_BASE` variable in the JavaScript points to `http://127.0.0.1:8080/api` for local testing.
 
-## Deployment
+## ☁️ Deployment
 
 **Deploy the Backend (Cloud Run):**
 ```bash
