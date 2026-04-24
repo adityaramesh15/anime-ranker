@@ -7,7 +7,7 @@ def clean_and_group_anime():
     os.makedirs('data', exist_ok=True)
     os.makedirs('data/images', exist_ok=True)
 
-    with open('data/raw_anime_data.json', 'r', encoding='utf-8') as f:
+    with open('data/datasets/raw_anime_data.json', 'r', encoding='utf-8') as f:
         raw_data = json.load(f)
 
     anime_dict = {item['id']: item for item in raw_data}
@@ -80,7 +80,7 @@ def clean_and_group_anime():
             "merged_entries": len(group)
         })
 
-    with open('data/clean_anime_list.json', 'w', encoding='utf-8') as f:
+    with open('data/datasets/clean_anime_list.json', 'w', encoding='utf-8') as f:
         json.dump(final_list, f, indent=4, ensure_ascii=False)
         
     print(f"Done! Cleaned data saved, and {len(final_list)} images are ready in the /images folder.")

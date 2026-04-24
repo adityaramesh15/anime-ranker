@@ -45,10 +45,10 @@ def fetch_top_anime(pages=4, per_page=50):
         else:
             print(f"Failed to fetch page {page}: {response.status_code}")
     
-    with open('data/raw_anime_data.json', 'w', encoding='utf-8') as f:
+    with open('data/datasets/raw_anime_data.json', 'w', encoding='utf-8') as f:
         json.dump(all_media, f, indent=4, ensure_ascii=False)
         
-    print(f"Successfully saved {len(all_media)} shows to data/raw_anime_data.json")
+    print(f"Successfully saved {len(all_media)} shows to data/datasets/raw_anime_data.json")
 
 if __name__ == "__main__":
     fetch_top_anime()
