@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Ranker - Vote</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Matchup</a>
+        <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+
+    <h1>Which is better?</h1>
+    
+    <div id="loading">Loading matchup...</div>
+
+    <div class="matchup-container" id="matchup-container" style="display: none;">
+        <div class="anime-card" id="card-a">
+            <img id="img-a" src="" alt="Anime A">
+            <h2 id="title-a">Anime A</h2>
+            <button onclick="submitVote(1)">Choose This</button>
+        </div>
+
+        <div class="anime-card" id="card-b">
+            <img id="img-b" src="" alt="Anime B">
+            <h2 id="title-b">Anime B</h2>
+            <button onclick="submitVote(0)">Choose This</button>
+        </div>
+    </div>
+
+    <div class="controls" id="controls" style="display: none;">
+        <button onclick="submitVote(0.5)">It's a Tie</button>
+        <button onclick="skipMatch()">Skip (Haven't seen both)</button>
+    </div>
+
+    <script>
+        const API_BASE = 'https://show-ranker-backend-10037187822.us-central1.run.app/api';
+        let currentShowA = null;
+        let currentShowB = null;
+
+        async function fetchMatchup() {
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('matchup-container').style.display = 'none';
+            document.getElementById('controls').style.display = 'none';
+
+            try {
+                const response = await fetch(`${API_BASE}/matchup`);
+                const data = await response.json();
+                
+                currentShowA = data.show_a;
+                currentShowB = data.show_b;
+
+                document.getElementById('title-a').innerText = currentShowA.title;
+                document.getElementById('img-a').src = `images/${currentShowA.id}.jpg`;
+                
+                document.getElementById('title-b').innerText = currentShowB.title;
+                document.getElementById('img-b').src = `images/${currentShowB.id}.jpg`;
+
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('matchup-container').style.display = 'flex';
+                document.getElementById('controls').style.display = 'block';
+            } catch (error) {
+                console.error("Error fetching matchup:", error);
+                document.getElementById('loading').innerText = "Error loading backend. Is Flask running?";
+            }
+        }
+
+        async function submitVote(outcome) {
+            // Hide UI while processing to prevent double clicks
+            document.getElementById('matchup-container').style.display = 'none';
+            document.getElementById('controls').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('loading').innerText = "Saving vote...";
+
+            try {
+                await fetch(`${API_BASE}/vote`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        anime_a_id: currentShowA.id,
+                        anime_b_id: currentShowB.id,
+                        outcome: outcome
+                    })
+                });
+                // Fetch next match immediately after success
+                fetchMatchup(); 
+            } catch (error) {
+                console.error("Error saving vote:", error);
+                alert("Failed to save vote!");
+            }
+        }
+
+        function skipMatch() {
+            fetchMatchup();
+        }
+
+        // Load first matchup on start
+        fetchMatchup();
+    </script>
+</body>
+</html>

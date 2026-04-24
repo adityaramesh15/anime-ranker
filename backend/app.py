@@ -3,9 +3,15 @@ from flask_cors import CORS
 import firebase_admin
 from firebase_admin import credentials, firestore
 from ranker import AnimeRanker
+import os 
 
-cred = credentials.Certificate('firebase_credentials.json')
-firebase_admin.initialize_app(cred)
+# cloud run or credentials pull (if local)
+if os.environ.get('K_SERVICE'):
+    firebase_admin.initialize_app()
+else:
+    cred = credentials.Certificate('firebase_credentials.json')
+    firebase_admin.initialize_app(cred)
+
 db = firestore.client()
 
 ranker = AnimeRanker(db)

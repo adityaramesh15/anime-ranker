@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Ranker - Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Matchup</a>
+        <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+
+    <h1>Global Top 150</h1>
+    
+    <div id="loading">Fetching live scores from database...</div>
+    
+    <ol class="leaderboard-list" id="leaderboard-list">
+        </ol>
+
+    <script>
+        const API_BASE = 'https://show-ranker-backend-10037187822.us-central1.run.app/api';
+
+        async function fetchLeaderboard() {
+            try {
+                const response = await fetch(`${API_BASE}/leaderboard`);
+                const data = await response.json();
+                
+                const listEl = document.getElementById('leaderboard-list');
+                document.getElementById('loading').style.display = 'none';
+
+                data.forEach((anime, index) => {
+                    const li = document.createElement('li');
+                    li.className = 'leaderboard-item';
+                    
+                    li.innerHTML = `
+                        <span class="rank">#${index + 1}</span>
+                        <img src="images/${anime.id}.jpg" alt="${anime.title}">
+                        <span class="title">${anime.title}</span>
+                        <span class="score">${anime.elo_score} Elo</span>
+                    `;
+                    
+                    listEl.appendChild(li);
+                });
+            } catch (error) {
+                console.error("Error fetching leaderboard:", error);
+                document.getElementById('loading').innerText = "Error loading backend. Is Flask running?";
+            }
+        }
+
+        fetchLeaderboard();
+    </script>
+</body>
+</html>

@@ -208,3 +208,4 @@ __marimo__/
 
 .vscode
 firebase_credentials.json
+.firebase
