@@ -77,9 +77,17 @@ button:hover {
     background-color: var(--hover-color);
 }
 
+.controls {
+    display: flex;
+    flex-wrap: wrap; /* Allows the buttons to stack on small screens */
+    justify-content: center; /* Keeps them perfectly centered */
+    gap: 15px; /* Adds 15px of space BOTH horizontally and vertically */
+    padding: 0 15px; /* Prevents them from touching the absolute edge of the phone screen */
+}
+
 .controls button {
     background-color: #333;
-    margin: 0 10px;
+    margin: 0; /* We remove the old margin because 'gap' handles all the spacing now */
 }
 
 .controls button:hover {
