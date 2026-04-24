@@ -1,11 +1,10 @@
-
-
 # Anime Ranker
 
-A full-stack, serverless web application that allows users to rank the top 150 anime franchises through head-to-head, Elo-based matchups. Try it out [here!](https://show-ranker-project.web.app/)
+A full-stack, serverless web application that allows users to rank the top 150 anime franchises through head-to-head, Elo-based matchups. Features secure Google Sign-in to track both personal tier lists and a community-driven global leaderboard. Try it out [here!](https://show-ranker-project.web.app/)
 
 ## Architecture & Tech Stack
 * **Frontend:** HTML, CSS, JavaScript (Vanilla) hosted on **Firebase Hosting**.
+* **Authentication:** **Firebase Auth** (Google Sign-In) for personalized ranking profiles.
 * **Backend:** Python and Flask, containerized and deployed on **Google Cloud Run**.
 * **Database:** **Google Firestore** (NoSQL) for durable Elo score tracking.
 * **Data Pipeline:** Python scripts that fetch, clean, and consolidate franchise data from the **AniList GraphQL API**.
@@ -28,8 +27,8 @@ show-ranker/
 │   └── upload_to_firestore.py  # One-time script to populate the live database
 ├── frontend/                   # Firebase Hosting Static Assets
 │   ├── images/                 # 150 downloaded cover images ({id}.jpg)
-│   ├── index.html              # The Matchup voting UI
-│   ├── leaderboard.html        # The Global Top 150 UI
+│   ├── index.html              # The Matchup voting UI (with Auth)
+│   ├── leaderboard.html        # The Global & Personal Leaderboard UI
 │   └── style.css
 ├── .firebaserc                 # Firebase project target
 ├── firebase.json               # Firebase deployment rules
@@ -38,15 +37,16 @@ show-ranker/
 └── requirements.txt 
 ```
 
-## How it Works (The Elo System & Caching)
-To optimize database reads and stay within GCP Free Tier limits, the backend utilizes an in-memory cache. 
-1. The Flask server reads the top 150 shows into memory on startup (150 reads).
-2. Matchups are generated entirely from memory by comparing adjacent scores (0 reads).
-3. When a user votes, the server fetches ONLY the two competing shows, calculates the new expected outcome using standard Elo math (K-factor = 32), and writes the two updated scores back to Firestore.
-4. The local memory cache is patched with the new scores, avoiding the need for a full database re-fetch.
-5. The Leaderboard page performs a fresh query to ensure eventual consistency for all users.
+## How it Works (The Elo System, Auth & Caching)
+To optimize database reads and stay well within GCP Free Tier limits, the backend utilizes a dual-layer in-memory caching system using standard arrays and `cachetools`.
 
-## 🛠️ Local Development Setup
+1. **Initialization:** When a user logs in for the first time, a baseline copy of the Top 150 shows (starting at 1200 Elo) is created in their personal Firestore sub-collection.
+2. **Matchmaking (0 Reads):** Matchups are generated entirely from memory by comparing adjacent scores in the user's specific `TTLCache`.
+3. **Processing (Atomic Writes):** When a user votes, the server fetches the two specific shows from the database. It calculates the new expected outcomes using standard Elo math (K-factor = 32) for *both* the Global baseline and the User's personal baseline.
+4. **Batch Updates:** The updated Global and Personal scores are written back to Firestore simultaneously using a `db.batch()` operation to ensure data integrity.
+5. **Memory Patching:** The local memory caches are instantly patched with the new scores, avoiding the need for a full database re-fetch on the next request.
+
+## Local Development Setup
 
 ### 1. Backend
 ```bash
@@ -66,9 +66,11 @@ python app.py
 *(Note: You will need a `firebase_credentials.json` service account key in the `backend` folder for local database access).*
 
 ### 2. Frontend
-Since the frontend uses standard web APIs, simply open `frontend/index.html` in your web browser. Ensure the `API_BASE` variable in the JavaScript points to `http://127.0.0.1:8080/api` for local testing.
+Since the frontend uses standard web APIs, simply open `frontend/index.html` in your web browser. 
+* Ensure the `API_BASE` variable in the JavaScript points to `http://127.0.0.1:8080/api` for local testing.
+* **Important:** You must paste your project's `firebaseConfig` object from the Firebase Console into the `<script type="module">` blocks of both HTML files for Authentication to work locally.
 
-## ☁️ Deployment
+## Deployment
 
 **Deploy the Backend (Cloud Run):**
 ```bash
@@ -77,7 +79,7 @@ gcloud run deploy anime-ranker-backend --source . --region us-central1 --allow-u
 ```
 
 **Deploy the Frontend (Firebase Hosting):**
-Update the `API_BASE` in your frontend JS to match your new Cloud Run URL, then run:
+The frontend code is configured to automatically detect if it is running locally or in the cloud. Simply run:
 ```bash
 firebase deploy --only hosting
 ```
