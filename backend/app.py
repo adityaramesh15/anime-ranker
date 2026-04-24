@@ -57,5 +57,21 @@ def get_leaderboard():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/ignore', methods=['POST'])
+def ignore_shows():
+    data = request.json
+    uid = data.get('uid')
+    anime_ids = data.get('anime_ids', []) 
+
+    if not uid or not isinstance(anime_ids, list):
+        return jsonify({"error": "Invalid payload."}), 400
+    
+    try:
+        result = ranker.ignore_shows(uid, anime_ids)
+        return jsonify(result), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)

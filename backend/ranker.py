@@ -64,7 +64,7 @@ class AnimeRanker:
     def get_matchup(self, uid):
         self._refresh_user_cache_if_needed(uid)
 
-        user_list = self.user_caches[uid]
+        user_list = [anime for anime in self.user_caches[uid] if not anime.get("ignored", False)]
 
         if len(user_list) < 2:
             raise ValueError("Not enough anime entries for matchup.")
@@ -87,8 +87,10 @@ class AnimeRanker:
             reverse=True,
         )
 
+        watched_personal_shows = [anime for anime in self.user_caches[uid] if not anime.get("ignored", False)]
+
         personal_sorted = sorted(
-            self.user_caches[uid],
+            watched_personal_shows,
             key=lambda x: x.get("elo_score", 1200),
             reverse=True,
         )
@@ -97,6 +99,28 @@ class AnimeRanker:
             "global": global_sorted,
             "personal": personal_sorted,
         }
+    
+    def ignore_shows(self, uid, anime_ids):
+        self._refresh_user_cache_if_needed(uid)
+        
+        batch = self.db.batch()
+        
+        for anime_id in anime_ids:
+            doc_ref = (
+                self.db.collection("users")
+                .document(uid)
+                .collection("personal_anime")
+                .document(str(anime_id))
+            )
+            batch.update(doc_ref, {"ignored": True})
+            
+            if uid in self.user_caches:
+                for anime in self.user_caches[uid]:
+                    if str(anime["id"]) == str(anime_id):
+                        anime["ignored"] = True
+                        
+        batch.commit()
+        return {"status": "success"}
 
     def process_match(self, uid, anime_a_id, anime_b_id, outcome):
         self._refresh_user_cache_if_needed(uid)

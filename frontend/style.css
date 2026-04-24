@@ -1,30 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
 :root {
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --text-color: #ffffff;
-    --primary-color: #bb86fc;
-    --hover-color: #3700b3;
+    --bg-color: #0f1115;
+    --card-bg: rgba(30, 33, 40, 0.7);
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary-color: #6366f1;
+    --primary-hover: #4f46e5;
+    --secondary-color: #334155;
+    --secondary-hover: #ef4444;
+    --accent-glow: rgba(99, 102, 241, 0.4);
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Outfit', sans-serif;
     background-color: var(--bg-color);
+    background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, var(--bg-color) 50%);
     color: var(--text-color);
     margin: 0;
     padding: 20px;
     text-align: center;
+    min-height: 100vh;
+    box-sizing: border-box;
 }
 
 nav {
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 15px 30px;
+    background: rgba(15, 17, 21, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: inline-flex;
+    gap: 20px;
 }
 
 nav a {
-    color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
-    font-size: 1.2rem;
-    margin: 0 15px;
-    font-weight: bold;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--accent-glow);
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #a5b4fc, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(129, 140, 248, 0.3);
 }
 
 /* Matchup Page Styles */
@@ -32,71 +66,123 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 30px;
+    gap: 40px;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .anime-card {
     background-color: var(--card-bg);
-    border-radius: 12px;
-    padding: 20px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 24px;
+    width: 320px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+}
+
+.anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.3);
 }
 
 .anime-card img {
     width: 100%;
-    height: 400px;
+    height: 420px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease;
+}
+
+.anime-card:hover img {
+    transform: scale(1.03);
 }
 
 .anime-card h2 {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 button {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 12px 20px;
-    border-radius: 6px;
+    padding: 14px 24px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1rem;
-    font-weight: bold;
-    transition: background-color 0.2s;
+    font-weight: 600;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 button:hover {
-    background-color: var(--hover-color);
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    font-size: 0.9rem;
+    padding: 12px 20px;
+    color: var(--text-muted);
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-hover);
+    color: white;
+    box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
 }
 
 .controls {
     display: flex;
-    flex-wrap: wrap; /* Allows the buttons to stack on small screens */
-    justify-content: center; /* Keeps them perfectly centered */
-    gap: 15px; /* Adds 15px of space BOTH horizontally and vertically */
-    padding: 0 15px; /* Prevents them from touching the absolute edge of the phone screen */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 20px;
+    margin-top: 10px;
 }
 
 .controls button {
-    background-color: #333;
-    margin: 0; /* We remove the old margin because 'gap' handles all the spacing now */
+    background-color: rgba(51, 65, 85, 0.6);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
 }
 
 .controls button:hover {
-    background-color: #555;
+    background-color: rgba(71, 85, 105, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Leaderboard Styles */
 .leaderboard-list {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
     text-align: left;
     list-style-position: inside;
@@ -105,31 +191,45 @@ button:hover {
 
 .leaderboard-item {
     background-color: var(--card-bg);
-    margin-bottom: 10px;
-    padding: 10px 15px;
-    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 12px;
+    padding: 12px 20px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     font-size: 1.1rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.leaderboard-item:hover {
+    transform: scale(1.02);
+    background-color: rgba(40, 44, 52, 0.8);
+    border-color: rgba(99, 102, 241, 0.3);
 }
 
 .leaderboard-item img {
-    width: 50px;
-    height: 70px;
+    width: 60px;
+    height: 84px;
     object-fit: cover;
-    border-radius: 4px;
-    margin: 0 15px;
+    border-radius: 6px;
+    margin: 0 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .rank {
-    font-weight: bold;
-    color: var(--primary-color);
-    width: 70px; 
-    flex-shrink: 0; 
+    font-weight: 700;
+    color: #a5b4fc;
+    width: 40px; 
+    flex-shrink: 0;
+    font-size: 1.2rem;
 }
 
 .score {
     margin-left: auto;
-    font-weight: bold;
-    color: #888;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.05);
+    padding: 6px 12px;
+    border-radius: 20px;
 }

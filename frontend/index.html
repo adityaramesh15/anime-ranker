@@ -23,20 +23,31 @@
     <div class="matchup-container" id="matchup-container" style="display: none;">
         <div class="anime-card" id="card-a">
             <img id="img-a" src="" alt="Anime A">
-            <h2 id="title-a">Anime A</h2>
-            <button onclick="submitVote(1)">Choose This</button>
+            <div class="card-content">
+                <h2 id="title-a">Anime A</h2>
+                <div class="button-group">
+                    <button class="primary-btn" onclick="submitVote(1)">Choose This</button>
+                    <button class="secondary-btn" onclick="markUnwatched([currentShowA.id])">Haven't seen this</button>
+                </div>
+            </div>
         </div>
 
         <div class="anime-card" id="card-b">
             <img id="img-b" src="" alt="Anime B">
-            <h2 id="title-b">Anime B</h2>
-            <button onclick="submitVote(0)">Choose This</button>
+            <div class="card-content">
+                <h2 id="title-b">Anime B</h2>
+                <div class="button-group">
+                    <button class="primary-btn" onclick="submitVote(0)">Choose This</button>
+                    <button class="secondary-btn" onclick="markUnwatched([currentShowB.id])">Haven't seen this</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="controls" id="controls" style="display: none;">
-        <button onclick="submitVote(0.5)">It's a Tie</button>
-        <button onclick="skipMatch()">Skip (Haven't seen both)</button>
+        <button onclick="submitVote(0.5)"> Tie</button>
+        <!-- <button onclick="skipMatch()">Skip (Keep in pool)</button> -->
+        <button onclick="markUnwatched([currentShowA.id, currentShowB.id])">Seen Neither</button>
     </div>
 
     <script type="module">
@@ -158,6 +169,33 @@
                 fetchMatchup(); 
             } catch (error) {
                 console.error("Error saving vote:", error);
+            }
+        }
+
+        async function markUnwatched(animeIds) {
+            if (!window.currentUserUid) return;
+
+            // Hide UI while loading
+            document.getElementById('matchup-container').style.display = 'none';
+            document.getElementById('controls').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('loading').innerText = "Removing unwatched shows...";
+
+            try {
+                await fetch(`${API_BASE}/ignore`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        uid: window.currentUserUid,
+                        anime_ids: animeIds // We pass the array of IDs here
+                    })
+                });
+                
+                // Fetch a new matchup immediately
+                fetchMatchup(); 
+            } catch (error) {
+                console.error("Error ignoring shows:", error);
+                document.getElementById('loading').innerText = "Error! Please refresh.";
             }
         }
 
