@@ -6,6 +6,9 @@
             "english": "Attack on Titan"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16498-buvcRTBx4NSm.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -95,6 +98,9 @@
             "english": "Demon Slayer: Kimetsu no Yaiba"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101922-WBsBl0ClmgYL.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -149,6 +155,9 @@
             "english": "Death Note"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1535-kUgkcrfOrkUM.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -182,6 +191,9 @@
             "english": "JUJUTSU KAISEN"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113415-LHBAeoZDIsnF.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -222,6 +234,9 @@
             "english": "My Hero Academia"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21459-nYh85uj2Fuwr.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -262,6 +277,9 @@
             "english": "Hunter x Hunter (2011)"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11061-y5gsT1hoHuHw.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -337,6 +355,9 @@
             "english": "One-Punch Man"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21087-B5DHjqZ3kW4b.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -377,6 +398,9 @@
             "english": "Tokyo Ghoul"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20605-k665mVkSug8D.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -424,6 +448,9 @@
             "english": "Attack on Titan Season 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20958-HuFJyr54Mmir.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -478,6 +505,9 @@
             "english": "ONE PIECE"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21-ELSYx3yMPcKM.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -931,6 +961,9 @@
             "english": "Fullmetal Alchemist: Brotherhood"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5114-nSWCgQlmOMtj.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -978,6 +1011,9 @@
             "english": "Naruto"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20-dE6UHbFFg1A5.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1074,6 +1110,9 @@
             "english": "Sword Art Online"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11757-SxYDUzdr9rh2.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1170,6 +1209,9 @@
             "english": "Your Name."
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21519-SUo3ZQuCbYhJ.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -1217,6 +1259,9 @@
             "english": "A Silent Voice"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20954-sYRfE5jQRtSB.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1243,6 +1288,9 @@
             "english": "Attack on Titan Season 3"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99147-AiPDD8cwlCfi.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1304,6 +1352,9 @@
             "english": "My Hero Academia Season 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21856-gutauxhWAwn6.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -1344,6 +1395,9 @@
             "english": "The Promised Neverland"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101759-8UR7r9MNVpz2.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1377,6 +1431,9 @@
             "english": "Attack on Titan Final Season"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx110277-sKUNXAsWMNFw.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1417,6 +1474,9 @@
             "english": "Assassination Classroom"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20755-dWrhs569YGUO.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1485,6 +1545,9 @@
             "english": "Mob Psycho 100"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21507-6YUSbh2m0N1p.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1525,6 +1588,9 @@
             "english": "Your lie in April"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20665-TLgkL8T8IRFd.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -1551,6 +1617,9 @@
             "english": "Attack on Titan Season 3 Part 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx104578-k61nx3LPjvgd.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1598,6 +1667,9 @@
             "english": "ERASED"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21234-XmqW39aQ9o7O.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1617,6 +1689,9 @@
             "english": "Naruto: Shippuden"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1735-kGfVm0YqCPcu.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -1776,6 +1851,9 @@
             "english": "Re:ZERO -Starting Life in Another World-"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21355-wRVUrGxpvIQQ.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1879,6 +1957,9 @@
             "english": "Chainsaw Man"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127230-DdP4vAdssLoz.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -1947,6 +2028,9 @@
             "english": "My Hero Academia Season 3"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100166-jUCZYbzn2XLw.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -1987,6 +2071,9 @@
             "english": "Steins;Gate"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9253-tIUXF2gfU8Sg.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2076,6 +2163,9 @@
             "english": "HAIKYU!!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20464-ooZUyBe4ptp9.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -2137,6 +2227,9 @@
             "english": "Rascal Does Not Dream of Bunny Girl Senpai"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101291-wfEdgPqtfU0l.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2226,6 +2319,9 @@
             "english": "Black Clover"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97940-fyh8o7gNbha0.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -2294,6 +2390,9 @@
             "english": "SPY x FAMILY"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140960-Kb6R5nYQfjmP.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2320,6 +2419,9 @@
             "english": "Kaguya-sama: Love is War"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101921-ufrjLzhSz7L1.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2346,6 +2448,9 @@
             "english": "Dr. STONE"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105333-GybuoSoOZfpH.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2372,6 +2477,9 @@
             "english": "No Game, No Life"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b19815-sEOQ9yQaPKlk.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2419,6 +2527,9 @@
             "english": "Violet Evergarden"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21827-ubzq619ZA2E9.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -2459,6 +2570,9 @@
             "english": "Noragami"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20447-EoQXeygHaVCK.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2506,6 +2620,9 @@
             "english": "Toradora!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4224-PXVMBLNwy2aF.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2560,6 +2677,9 @@
             "english": "Akame ga Kill!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20613-HXHpec4bemk5.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2586,6 +2706,9 @@
             "english": "My Hero Academia Season 4"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx104276-SnEowMvesWIE.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -2633,6 +2756,9 @@
             "english": "The Seven Deadly Sins"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20789-Ma5ouSYPkru9.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2673,6 +2799,9 @@
             "english": "Vinland Saga"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101348-2fhDFPCuMNiz.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2706,6 +2835,9 @@
             "english": "Horimiya"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124080-3i22mRVPBS0T.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2739,6 +2871,9 @@
             "english": "KONOSUBA -God's blessing on this wonderful world!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21202-mPOr80AEjUcZ.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -2814,6 +2949,9 @@
             "english": "Demon Slayer -Kimetsu no Yaiba- The Movie: Mugen Train"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112151-1qlQwPB1RrJe.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -2854,6 +2992,9 @@
             "english": "Parasyte -the maxim-"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20623-dUARfggnNDOe.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -2873,6 +3014,9 @@
             "english": "Bleach"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx269-d2GmRkJbMopq.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -2962,6 +3106,9 @@
             "english": "DARLING in the FRANXX"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx99423-8MBxtwCeHf8B.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -2988,6 +3135,9 @@
             "english": "Code Geass: Lelouch of the Rebellion"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1575-hsmWM2ydNm1m.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3133,6 +3283,9 @@
             "english": "Neon Genesis Evangelion"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx30-AI1zr74Dh4ye.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3250,6 +3403,9 @@
             "english": "Spirited Away"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199-sWefXJvXkDOb.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3269,6 +3425,9 @@
             "english": "Fire Force"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105310-2PKUvoaA6fTn.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3323,6 +3482,9 @@
             "english": "JoJo's Bizarre Adventure (TV)"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14719-VT5dRzTBSZ0w.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3363,6 +3525,9 @@
             "english": "Demon Slayer: Kimetsu no Yaiba Entertainment District Arc"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142329-kET1PIXJv2eW.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3403,6 +3568,9 @@
             "english": "Death Parade"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx20931-bktYqOcxPERi.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3429,6 +3597,9 @@
             "english": "One-Punch Man Season 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97668-nC8gQrXVxt7k.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -3469,6 +3640,9 @@
             "english": "Cowboy Bebop"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1-GCsPm7waJ4kS.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -3516,6 +3690,9 @@
             "english": "Blue Exorcist"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9919-nXS7JOZrWHfS.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3563,6 +3740,9 @@
             "english": "JUJUTSU KAISEN Season 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx145064-hSNRJM03pvv1.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3610,6 +3790,9 @@
             "english": "Kakegurui"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b98314-TSJykxVwCCQN.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3650,6 +3833,9 @@
             "english": "The Rising of the Shield Hero"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99263-LcazQwdlWzMy.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3704,6 +3890,9 @@
             "english": "Sword Art Online II"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx20594-FhRgZ1H9Istt.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3800,6 +3989,9 @@
             "english": "Mob Psycho 100 II"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101338-rokVscjRYzdP.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3840,6 +4032,9 @@
             "english": "Angel Beats!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6547-SYexAn5aFyss.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -3936,6 +4131,9 @@
             "english": "Tokyo Revengers"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120120-cWDmnmeEntSe.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -3969,6 +4167,9 @@
             "english": "That Time I Got Reincarnated as a Slime"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101280-tDxCVJm714nt.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4044,6 +4245,9 @@
             "english": "Frieren: Beyond Journey’s End"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx154587-qQTzQnEJJ3oB.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4098,6 +4302,9 @@
             "english": "Kaguya-sama: Love is War?"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112641-zoGC8d6FaPXU.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4138,6 +4345,9 @@
             "english": "Mushoku Tensei: Jobless Reincarnation"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108465-1ANspF1EWyFx.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4165,12 +4375,51 @@
         }
     },
     {
+        "id": 98659,
+        "title": {
+            "romaji": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+            "english": "Classroom of the Elite"
+        },
+        "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98659-WNyPLIZDpGGY.jpg"
+        },
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 94970,
+                        "format": "NOVEL"
+                    }
+                },
+                {
+                    "relationType": "ALTERNATIVE",
+                    "node": {
+                        "id": 96798,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 145545,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
         "id": 10620,
         "title": {
             "romaji": "Mirai Nikki",
             "english": "The Future Diary"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10620-dUZeNej0W4QN.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -4205,45 +4454,15 @@
         }
     },
     {
-        "id": 98659,
-        "title": {
-            "romaji": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
-            "english": "Classroom of the Elite"
-        },
-        "format": "TV",
-        "relations": {
-            "edges": [
-                {
-                    "relationType": "ADAPTATION",
-                    "node": {
-                        "id": 94970,
-                        "format": "NOVEL"
-                    }
-                },
-                {
-                    "relationType": "ALTERNATIVE",
-                    "node": {
-                        "id": 96798,
-                        "format": "MANGA"
-                    }
-                },
-                {
-                    "relationType": "SEQUEL",
-                    "node": {
-                        "id": 145545,
-                        "format": "TV"
-                    }
-                }
-            ]
-        }
-    },
-    {
         "id": 20997,
         "title": {
             "romaji": "Charlotte",
             "english": null
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20997-axVYrsIfjtYJ.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4298,6 +4517,9 @@
             "english": "Attack on Titan Final Season Part 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131681-5ooUqvqNtee1.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4331,6 +4553,9 @@
             "english": "Bungo Stray Dogs"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21311-hAXyT8Yoh6G9.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4378,6 +4603,9 @@
             "english": "JUJUTSU KAISEN 0"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131573-rpl82vDEDRm6.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4404,6 +4632,9 @@
             "english": "Kill la Kill"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b18679-lbkq7iYESoFW.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -4437,6 +4668,9 @@
             "english": "Solo Leveling"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151807-it355ZgzquUd.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -4470,6 +4704,9 @@
             "english": "My Hero Academia Season 5"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx117193-E75BlZmDh1aB.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4524,6 +4761,9 @@
             "english": "Tokyo Ghoul √A"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20850-glDf9EMKeCwe.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4557,6 +4797,9 @@
             "english": "Food Wars!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20923-pNT38pjW3RFH.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4590,6 +4833,9 @@
             "english": "Made in Abyss"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97986-TQ7dCgbS3y5s.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4630,6 +4876,9 @@
             "english": "HAIKYU!! 2nd Season"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20992-aHgNbcalVEqk.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -4684,6 +4933,9 @@
             "english": "My Dress-Up Darling"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx132405-qP7FQYGmNI3d.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4710,6 +4962,9 @@
             "english": "Anohana: The Flower We Saw That Day"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9989-hImMg6kCMm6I.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4743,6 +4998,9 @@
             "english": "The Devil is a Part-Timer!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx15809-ECv3HyOYJKrk.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4783,6 +5041,9 @@
             "english": "Overlord"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20832-vUNm5zrYWifc.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4879,6 +5140,9 @@
             "english": "Is It Wrong to Try to Pick Up Girls in a Dungeon?"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20920-MTREwZOG4BAD.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -4933,6 +5197,9 @@
             "english": "Another"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11111-gvvE5bBYsyFo.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -4980,6 +5247,9 @@
             "english": "Soul Eater"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx3588-fSMggQoFSbUI.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -5020,6 +5290,9 @@
             "english": "Fairy Tail"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b6702-KI4qgSMyI8Pm.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -5095,6 +5368,9 @@
             "english": "KONOSUBA -God's blessing on this wonderful world! 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21699-Fkbnkl9ZC6fW.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -5142,6 +5418,9 @@
             "english": "Gurren Lagann"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2001-XwRnjzGeFWRQ.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -5238,6 +5517,9 @@
             "english": "My Teen Romantic Comedy SNAFU"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14813-3mNvcKNEQcDs.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5278,6 +5560,9 @@
             "english": "Dororo"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101347-TGaDwEYqLfm1.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5339,6 +5624,9 @@
             "english": "Assassination Classroom Second Season"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21170-kbcfTTZGSaFt.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5414,6 +5702,9 @@
             "english": "Re:ZERO -Starting Life in Another World- Season 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108632-lQWnmw7XaNOK.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5461,6 +5752,9 @@
             "english": "HAIKYU!! 3rd Season"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21698-RL71mr1YU5Io.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -5508,6 +5802,9 @@
             "english": "I Want to Eat Your Pancreas"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99750-pNyly9d3MEgV.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5527,6 +5824,9 @@
             "english": "Howl‘s Moving Castle"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx431-o8Lj3XkjHm2k.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5553,6 +5853,9 @@
             "english": "Code Geass: Lelouch of the Rebellion R2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2904-Fet9Q33suC7G.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5642,6 +5945,9 @@
             "english": "PSYCHO-PASS"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx13601-i42VFuHpqEOJ.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5696,6 +6002,9 @@
             "english": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx145139-rRimpHGWLhym.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -5729,6 +6038,9 @@
             "english": "DAN DA DAN"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx171018-60q1B6GK2Ghb.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5762,6 +6074,9 @@
             "english": "Cyberpunk: Edgerunners"
         },
         "format": "ONA",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120377-ayZPoxiWt4Li.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5795,6 +6110,9 @@
             "english": "Devilman Crybaby"
         },
         "format": "ONA",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98460-bLtH2c3jd6sV.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -5828,6 +6146,9 @@
             "english": "The Disastrous Life of Saiki K."
         },
         "format": "TV_SHORT",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21804-As6tDLAvEvNY.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5868,6 +6189,9 @@
             "english": "Hyouka"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12189-zj5AWUYO53Fv.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5922,6 +6246,9 @@
             "english": "Demon Slayer: Kimetsu no Yaiba Mugen Train Arc"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx129874-g6ZKXB94Hui1.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -5962,6 +6289,9 @@
             "english": "Weathering With You"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx106286-5COcpd0J9VbL.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -5988,6 +6318,9 @@
             "english": "Fate/Zero"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10087-M4Hd9qrHGrXk.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -6042,6 +6375,9 @@
             "english": "Love, Chunibyo & Other Delusions"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14741-CGXEIeUe2roA.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6089,6 +6425,9 @@
             "english": "Bakemonogatari"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5081-9GocceQ5Z865.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6157,6 +6496,9 @@
             "english": "JoJo's Bizarre Adventure: Stardust Crusaders"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20474-xuqem5GBlBtb.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6204,6 +6546,9 @@
             "english": "Hell’s Paradise"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128893-Gc2t8b8M0mVu.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6237,6 +6582,9 @@
             "english": "Tower of God"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx115230-QHOdSN7yt8ab.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6263,6 +6611,9 @@
             "english": "Miss Kobayashi's Dragon Maid"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21776-bwPaYKhnKfUs.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -6296,6 +6647,9 @@
             "english": "Dr. STONE: STONE WARS"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113936-D4eYd4XwslVI.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6336,6 +6690,9 @@
             "english": "Monster"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx19-gtMC64182sm4.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6355,6 +6712,9 @@
             "english": "The Promised Neverland Season 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108725-ZKivuyr4Jtc9.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6388,6 +6748,9 @@
             "english": "Seraph of the End: Vampire Reign"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20829-pgsXVjrfyI5V.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -6428,6 +6791,9 @@
             "english": "Wotakoi: Love is Hard for Otaku"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx99578-oO5KChtfhzln.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -6454,6 +6820,9 @@
             "english": "Puella Magi Madoka Magica"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9756-QnUGwlwwnsuN.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6550,6 +6919,9 @@
             "english": "SPY x FAMILY Cour 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142838-26JrqcFU1ljB.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6583,6 +6955,9 @@
             "english": "Oshi No Ko"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx150672-WqmmwZ4nMzAy.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -6616,6 +6991,9 @@
             "english": "Noragami Aragoto"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21128-eQgH3TG4nngo.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6656,6 +7034,9 @@
             "english": "To Your Eternity"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114535-y3NnjexcqKG1.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6682,6 +7063,9 @@
             "english": "Komi Can’t Communicate"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx133965-9TZBS4m4yvED.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -6715,6 +7099,9 @@
             "english": "JoJo's Bizarre Adventure: Diamond is Unbreakable"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21450-D7XFwEQjZ5GA.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6755,6 +7142,9 @@
             "english": "BANANA FISH"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx100388-hjkg1AnlJR5z.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6775,45 +7165,15 @@
         }
     },
     {
-        "id": 137822,
-        "title": {
-            "romaji": "Blue Lock",
-            "english": "BLUE LOCK"
-        },
-        "format": "TV",
-        "relations": {
-            "edges": [
-                {
-                    "relationType": "ADAPTATION",
-                    "node": {
-                        "id": 106130,
-                        "format": "MANGA"
-                    }
-                },
-                {
-                    "relationType": "SEQUEL",
-                    "node": {
-                        "id": 163146,
-                        "format": "TV"
-                    }
-                },
-                {
-                    "relationType": "SIDE_STORY",
-                    "node": {
-                        "id": 163147,
-                        "format": "MOVIE"
-                    }
-                }
-            ]
-        }
-    },
-    {
         "id": 108511,
         "title": {
             "romaji": "Tensei Shitara Slime Datta Ken 2nd Season",
             "english": "That Time I Got Reincarnated as a Slime Season 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx108511-PufFordLNyIb.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6848,12 +7208,51 @@
         }
     },
     {
+        "id": 137822,
+        "title": {
+            "romaji": "Blue Lock",
+            "english": "BLUE LOCK"
+        },
+        "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx137822-U8naszP96vzC.png"
+        },
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 106130,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 163146,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "SIDE_STORY",
+                    "node": {
+                        "id": 163147,
+                        "format": "MOVIE"
+                    }
+                }
+            ]
+        }
+    },
+    {
         "id": 105334,
         "title": {
             "romaji": "Fruits Basket: 1st Season",
             "english": "Fruits Basket (2019)"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105334-AZwEdMu4KFtV.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6887,6 +7286,9 @@
             "english": "High School DxD"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx11617-nmxMU9Zh3H5R.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6927,6 +7329,9 @@
             "english": "Rent-a-Girlfriend"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113813-SnljeXpU3Pw7.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -6981,6 +7386,9 @@
             "english": "The Quintessential Quintuplets"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103572-cchriAdH95cQ.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -7014,6 +7422,9 @@
             "english": "Tokyo Ghoul:re"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx100240-vJNaKd5HwPJ2.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7047,6 +7458,9 @@
             "english": "86 EIGHTY-SIX"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116589-KawXHB6sApFt.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7087,6 +7501,9 @@
             "english": "Mushoku Tensei: Jobless Reincarnation Cour 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127720-ADJgIrUVMdU9.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7134,6 +7551,9 @@
             "english": "Princess Mononoke"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx164-ySuGzCWVw2cL.jpg"
+        },
         "relations": {
             "edges": []
         }
@@ -7145,6 +7565,9 @@
             "english": "GOBLIN SLAYER"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101165-v5NwPXWPFDuD.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7178,6 +7601,9 @@
             "english": "The God of High School"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116006-Wt8JSA1ZQxlM.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -7197,6 +7623,9 @@
             "english": "JoJo's Bizarre Adventure: Golden Wind"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx102883-S9KzdMJhDswJ.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -7230,6 +7659,9 @@
             "english": "Clannad"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2167-pSDBcyc0vjej.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7305,6 +7737,9 @@
             "english": "Fire Force Season 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114236-wfQOWF0Ii3h2.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -7345,6 +7780,9 @@
             "english": "HAIKYU!! TO THE TOP"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx106625-UR22wB2NuNVi.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -7378,6 +7816,9 @@
             "english": "Durarara!!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6746-3LTwM95Uqeoa.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -7439,6 +7880,9 @@
             "english": "Gintama"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx918-iOaeBVUn4uK7.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7542,6 +7986,9 @@
             "english": "Re:ZERO -Starting Life in Another World- Season 2 Part 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx119661-GDbUZxrZMz01.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -7589,6 +8036,9 @@
             "english": "The Apothecary Diaries"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx161645-QLbzHXiYRgV2.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7636,6 +8086,9 @@
             "english": "The Eminence in Shadow"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130298-YMdcKHytpWNH.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7683,6 +8136,9 @@
             "english": "JoJo's Bizarre Adventure: Stardust Crusaders - Battle in Egypt"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20799-S1eyqBDlx51E.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7730,6 +8186,9 @@
             "english": "WONDER EGG PRIORITY"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx124845-JXORhqCTGt04.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7749,6 +8208,9 @@
             "english": "The Seven Deadly Sins: Revival of the Commandments"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99539-caPX28RSsgRP.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7796,6 +8258,9 @@
             "english": "Terror in Resonance"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20661-aCR7QgzDfOSI.png"
+        },
         "relations": {
             "edges": []
         }
@@ -7807,6 +8272,9 @@
             "english": "Sword Art Online: Alicization"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx100182-KctPmCJ2smHQ.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -7854,6 +8322,9 @@
             "english": "Maid-Sama!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx7054-GW4D7VAZG19W.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -7887,6 +8358,9 @@
             "english": "Kaguya-sama: Love is War -Ultra Romantic-"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx125367-1yuq9NFcQuLI.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -7927,6 +8401,9 @@
             "english": "High School of the Dead"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx8074-YB63Ik96fjPj.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -7953,6 +8430,9 @@
             "english": "Kuroko's Basketball"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx11771-uvr44RAwRxPw.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8028,6 +8508,9 @@
             "english": "Beyond the Boundary"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx18153-oDqA9zQzQPOq.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -8089,6 +8572,9 @@
             "english": "My Neighbor Totoro"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx523-fErBvxOHP7IX.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8115,6 +8601,9 @@
             "english": "Solo Leveling Season 2 -Arise from the Shadow-"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx176496-9BDMjAZGEbq4.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -8148,6 +8637,9 @@
             "english": "Samurai Champloo"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx205-7tHVFu6dPBm9.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -8167,6 +8659,9 @@
             "english": "K-ON!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5680-r3AI3Cwfv0Aq.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -8207,6 +8702,9 @@
             "english": "The Pet Girl of Sakurasou"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx13759-xNf0gJK4Axt2.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8233,6 +8731,9 @@
             "english": "Elfen Lied"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx226-MibyRKhIrnTe.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -8259,6 +8760,9 @@
             "english": "My Teen Romantic Comedy SNAFU TOO!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20698-YZIYor2zW3Ta.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -8299,6 +8803,9 @@
             "english": "MASHLE: MAGIC AND MUSCLES"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx151801-XxVf22Le6C8o.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -8325,6 +8832,9 @@
             "english": "Nisekoi"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx18897-G2Fx2ZACsXBU.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8365,6 +8875,9 @@
             "english": "Fate/stay night: Unlimited Blade Works"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx19603-ycT0pyEgDVQu.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8461,6 +8974,9 @@
             "english": "DON'T TOY WITH ME, MISS NAGATORO"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx120697-BA2TqxB1I5bJ.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8487,6 +9003,9 @@
             "english": "Fullmetal Alchemist"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx121-zjmixZ428Mwv.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -8535,52 +9054,15 @@
         }
     },
     {
-        "id": 21518,
-        "title": {
-            "romaji": "Shokugeki no Souma: Ni no Sara",
-            "english": "Food Wars! The Second Plate"
-        },
-        "format": "TV",
-        "relations": {
-            "edges": [
-                {
-                    "relationType": "PREQUEL",
-                    "node": {
-                        "id": 20923,
-                        "format": "TV"
-                    }
-                },
-                {
-                    "relationType": "ADAPTATION",
-                    "node": {
-                        "id": 75757,
-                        "format": "MANGA"
-                    }
-                },
-                {
-                    "relationType": "SEQUEL",
-                    "node": {
-                        "id": 98702,
-                        "format": "OVA"
-                    }
-                },
-                {
-                    "relationType": "SEQUEL",
-                    "node": {
-                        "id": 99255,
-                        "format": "TV"
-                    }
-                }
-            ]
-        }
-    },
-    {
         "id": 153288,
         "title": {
             "romaji": "Kaijuu 8-gou",
             "english": "Kaiju No. 8"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx153288-25FBfFJzEQ5O.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8622,12 +9104,58 @@
         }
     },
     {
+        "id": 21518,
+        "title": {
+            "romaji": "Shokugeki no Souma: Ni no Sara",
+            "english": "Food Wars! The Second Plate"
+        },
+        "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21518-uBqzDGIuSxJ5.jpg"
+        },
+        "relations": {
+            "edges": [
+                {
+                    "relationType": "PREQUEL",
+                    "node": {
+                        "id": 20923,
+                        "format": "TV"
+                    }
+                },
+                {
+                    "relationType": "ADAPTATION",
+                    "node": {
+                        "id": 75757,
+                        "format": "MANGA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 98702,
+                        "format": "OVA"
+                    }
+                },
+                {
+                    "relationType": "SEQUEL",
+                    "node": {
+                        "id": 99255,
+                        "format": "TV"
+                    }
+                }
+            ]
+        }
+    },
+    {
         "id": 141391,
         "title": {
             "romaji": "Yofukashi no Uta",
             "english": "Call of the Night"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141391-M3ZgUKTPENUk.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8661,6 +9189,9 @@
             "english": "Overlord II"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98437-5q0GWqHhNAgJ.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8715,6 +9246,9 @@
             "english": "Saga of Tanya the Evil"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21613-qT3NiwYP5dYc.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -8790,6 +9324,9 @@
             "english": "BEASTARS"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107660-hgknnyaLchJW.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -8816,6 +9353,9 @@
             "english": "Black Butler"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx4898-mW4gabZvwmLC.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8856,6 +9396,9 @@
             "english": "Vinland Saga Season 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx136430-gsBsJjA7hGh9.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8896,6 +9439,9 @@
             "english": "Golden Time"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx17895-M8yjOyMxHf5X.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8922,6 +9468,9 @@
             "english": "The Misfit of Demon King Academy: History’s Strongest Demon King Reincarnates and Goes to School with His Descendants"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112301-f88Fs2es4pSr.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8955,6 +9504,9 @@
             "english": "My Little Monster"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx14227-VGxPG1xDZG7v.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -8981,6 +9533,9 @@
             "english": "My Hero Academia Season 6"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139630-3v4gxWtNZxLV.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -9028,6 +9583,9 @@
             "english": "That Time I Got Reincarnated as a Slime Season 2 Part 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx116742-jn0dW23ftehq.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -9082,6 +9640,9 @@
             "english": "Plastic Memories"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20872-j5PBzzVtrYDM.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -9108,6 +9669,9 @@
             "english": "The Irregular at Magic High School"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20458-tGh343Ew10yU.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -9197,6 +9761,9 @@
             "english": "Dragon Ball Z"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx813-ZhnFNOeCU5dQ.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -9461,6 +10028,9 @@
             "english": "Ouran High School Host Club"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx853-fiUtW8yohsSF.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -9480,6 +10050,9 @@
             "english": "Mob Psycho 100 III"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140439-bPKmhe1wNxc9.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -9506,6 +10079,9 @@
             "english": "Demon Slayer: Kimetsu no Yaiba Hashira Training Arc"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx166240-PBV7zukIHW7V.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -9539,6 +10115,9 @@
             "english": "HAIKYU!! TO THE TOP Part 2"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113538-tHVE8j5mOPLu.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -9572,6 +10151,9 @@
             "english": "Rascal Does Not Dream of a Dreaming Girl"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx104157-rk99XI56PaIC.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -9619,6 +10201,9 @@
             "english": "ReLIFE"
         },
         "format": "ONA",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21049-4AHSLeiDE9eg.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -9645,6 +10230,9 @@
             "english": "BOCCHI THE ROCK!"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx130003-HTDmeL4RGeJ4.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -9692,6 +10280,9 @@
             "english": "Deadman Wonderland"
         },
         "format": "TV",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6880-qZ1jIqIYpST2.png"
+        },
         "relations": {
             "edges": [
                 {
@@ -9718,6 +10309,9 @@
             "english": "Neon Genesis Evangelion: The End of Evangelion"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx32-5JYsv0wc122I.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -9751,6 +10345,9 @@
             "english": "5 Centimeters per Second"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1689-rJKhjLEjQHSy.jpg"
+        },
         "relations": {
             "edges": [
                 {
@@ -9784,6 +10381,9 @@
             "english": "The Garden of Words"
         },
         "format": "MOVIE",
+        "coverImage": {
+            "extraLarge": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16782-qpFGk18UqaHn.jpg"
+        },
         "relations": {
             "edges": [
                 {

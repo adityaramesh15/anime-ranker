@@ -14,6 +14,9 @@ def fetch_top_anime(pages=4, per_page=50):
             english
           }
           format
+          coverImage {
+            extraLarge
+          }
           relations {
             edges {
               relationType
@@ -42,7 +45,6 @@ def fetch_top_anime(pages=4, per_page=50):
         else:
             print(f"Failed to fetch page {page}: {response.status_code}")
     
-
     with open('data/raw_anime_data.json', 'w', encoding='utf-8') as f:
         json.dump(all_media, f, indent=4, ensure_ascii=False)
         
