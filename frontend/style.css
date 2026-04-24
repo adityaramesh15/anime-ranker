@@ -116,7 +116,8 @@ button:hover {
 .rank {
     font-weight: bold;
     color: var(--primary-color);
-    width: 30px;
+    width: 70px; 
+    flex-shrink: 0; 
 }
 
 .score {
