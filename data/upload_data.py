@@ -15,7 +15,7 @@ def upload_data():
     print(f"Uploading {len(anime_list)} shows to Firestore...")
 
     for anime in anime_list:
-        doc_ref = db.collection('anime').document(str(anime['id']))
+        doc_ref = db.collection('global_anime').document(str(anime['id']))
         doc_ref.set(anime)
     
     print("Upload complete! Check your Firebase Console to see the data.")
