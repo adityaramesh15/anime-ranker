@@ -3,31 +3,31 @@
         "id": 16498,
         "title": "Attack on Titan",
         "elo_score": 1200,
-        "merged_entries": 6
+        "merged_entries": 8
     },
     {
         "id": 101922,
-        "title": "Demon Slayer: Kimetsu no Yaiba",
+        "title": "Demon Slayer",
         "elo_score": 1200,
         "merged_entries": 6
-    },
-    {
-        "id": 1535,
-        "title": "Death Note",
-        "elo_score": 1200,
-        "merged_entries": 2
     },
     {
         "id": 113415,
         "title": "JUJUTSU KAISEN",
         "elo_score": 1200,
-        "merged_entries": 3
+        "merged_entries": 4
+    },
+    {
+        "id": 1535,
+        "title": "Death Note",
+        "elo_score": 1200,
+        "merged_entries": 1
     },
     {
         "id": 21459,
         "title": "My Hero Academia",
         "elo_score": 1200,
-        "merged_entries": 6
+        "merged_entries": 7
     },
     {
         "id": 11061,
@@ -45,13 +45,13 @@
         "id": 20605,
         "title": "Tokyo Ghoul",
         "elo_score": 1200,
-        "merged_entries": 3
+        "merged_entries": 4
     },
     {
         "id": 21,
         "title": "ONE PIECE",
         "elo_score": 1200,
-        "merged_entries": 2
+        "merged_entries": 1
     },
     {
         "id": 5114,
@@ -63,7 +63,7 @@
         "id": 20,
         "title": "Naruto",
         "elo_score": 1200,
-        "merged_entries": 2
+        "merged_entries": 3
     },
     {
         "id": 11757,
@@ -78,10 +78,10 @@
         "merged_entries": 2
     },
     {
-        "id": 11771,
-        "title": "Kuroko's Basketball",
+        "id": 20755,
+        "title": "Assassination Classroom",
         "elo_score": 1200,
-        "merged_entries": 4
+        "merged_entries": 2
     },
     {
         "id": 21507,
@@ -102,16 +102,16 @@
         "merged_entries": 1
     },
     {
+        "id": 127230,
+        "title": "Chainsaw Man",
+        "elo_score": 1200,
+        "merged_entries": 2
+    },
+    {
         "id": 21355,
         "title": "Re:ZERO",
         "elo_score": 1200,
         "merged_entries": 3
-    },
-    {
-        "id": 127230,
-        "title": "Chainsaw Man",
-        "elo_score": 1200,
-        "merged_entries": 1
     },
     {
         "id": 9253,
@@ -141,7 +141,7 @@
         "id": 140960,
         "title": "SPY x FAMILY",
         "elo_score": 1200,
-        "merged_entries": 2
+        "merged_entries": 3
     },
     {
         "id": 101921,
@@ -159,7 +159,7 @@
         "id": 19815,
         "title": "No Game, No Life",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 21827,
@@ -207,11 +207,11 @@
         "id": 21202,
         "title": "KONOSUBA",
         "elo_score": 1200,
-        "merged_entries": 2
+        "merged_entries": 3
     },
     {
         "id": 20623,
-        "title": "Parasyte -the maxim-",
+        "title": "Parasyte",
         "elo_score": 1200,
         "merged_entries": 1
     },
@@ -219,7 +219,7 @@
         "id": 269,
         "title": "Bleach",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 99423,
@@ -229,7 +229,7 @@
     },
     {
         "id": 1575,
-        "title": "Code Geass: Lelouch of the Rebellion",
+        "title": "Code Geass",
         "elo_score": 1200,
         "merged_entries": 2
     },
@@ -252,6 +252,12 @@
         "merged_entries": 5
     },
     {
+        "id": 20931,
+        "title": "Death Parade",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
         "id": 1,
         "title": "Cowboy Bebop",
         "elo_score": 1200,
@@ -267,19 +273,19 @@
         "id": 98314,
         "title": "Kakegurui",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 99263,
         "title": "The Rising of the Shield Hero",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 6547,
         "title": "Angel Beats!",
         "elo_score": 1200,
-        "merged_entries": 2
+        "merged_entries": 1
     },
     {
         "id": 120120,
@@ -297,11 +303,17 @@
         "id": 154587,
         "title": "Frieren: Beyond Journey’s End",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 108465,
         "title": "Mushoku Tensei: Jobless Reincarnation",
+        "elo_score": 1200,
+        "merged_entries": 3
+    },
+    {
+        "id": 98659,
+        "title": "Classroom of the Elite",
         "elo_score": 1200,
         "merged_entries": 2
     },
@@ -312,8 +324,8 @@
         "merged_entries": 1
     },
     {
-        "id": 98659,
-        "title": "Classroom of the Elite",
+        "id": 20997,
+        "title": "Charlotte",
         "elo_score": 1200,
         "merged_entries": 1
     },
@@ -321,7 +333,7 @@
         "id": 21311,
         "title": "Bungo Stray Dogs",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 18679,
@@ -339,7 +351,7 @@
         "id": 20923,
         "title": "Food Wars!",
         "elo_score": 1200,
-        "merged_entries": 2
+        "merged_entries": 3
     },
     {
         "id": 97986,
@@ -369,13 +381,13 @@
         "id": 20832,
         "title": "Overlord",
         "elo_score": 1200,
-        "merged_entries": 2
+        "merged_entries": 3
     },
     {
         "id": 20920,
         "title": "Is It Wrong to Try to Pick Up Girls in a Dungeon?",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 11111,
@@ -396,16 +408,16 @@
         "merged_entries": 1
     },
     {
+        "id": 14813,
+        "title": "My Teen Romantic Comedy SNAFU",
+        "elo_score": 1200,
+        "merged_entries": 3
+    },
+    {
         "id": 2001,
         "title": "Gurren Lagann",
         "elo_score": 1200,
         "merged_entries": 1
-    },
-    {
-        "id": 14813,
-        "title": "My Teen Romantic Comedy SNAFU",
-        "elo_score": 1200,
-        "merged_entries": 2
     },
     {
         "id": 101347,
@@ -447,7 +459,7 @@
         "id": 10087,
         "title": "Fate/Zero",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 3
     },
     {
         "id": 14741,
@@ -501,7 +513,7 @@
         "id": 9756,
         "title": "Puella Magi Madoka Magica",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 150672,
@@ -555,13 +567,13 @@
         "id": 103572,
         "title": "The Quintessential Quintuplets",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 116589,
         "title": "86 EIGHTY-SIX",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 101165,
@@ -579,7 +591,7 @@
         "id": 2167,
         "title": "Clannad",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 6746,
@@ -597,11 +609,17 @@
         "id": 161645,
         "title": "The Apothecary Diaries",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 130298,
         "title": "The Eminence in Shadow",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 20661,
+        "title": "Terror in Resonance",
         "elo_score": 1200,
         "merged_entries": 1
     },
@@ -612,8 +630,8 @@
         "merged_entries": 1
     },
     {
-        "id": 20661,
-        "title": "Terror in Resonance",
+        "id": 100182,
+        "title": "Sword Art Online: Alicization",
         "elo_score": 1200,
         "merged_entries": 1
     },
@@ -626,6 +644,12 @@
     {
         "id": 8074,
         "title": "High School of the Dead",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 11771,
+        "title": "Kuroko's Basketball",
         "elo_score": 1200,
         "merged_entries": 1
     },
@@ -645,7 +669,7 @@
         "id": 5680,
         "title": "K-ON!",
         "elo_score": 1200,
-        "merged_entries": 1
+        "merged_entries": 2
     },
     {
         "id": 13759,
@@ -678,14 +702,14 @@
         "merged_entries": 1
     },
     {
-        "id": 121,
-        "title": "Fullmetal Alchemist",
+        "id": 153288,
+        "title": "Kaiju No. 8",
         "elo_score": 1200,
         "merged_entries": 1
     },
     {
-        "id": 153288,
-        "title": "Kaiju No. 8",
+        "id": 121,
+        "title": "Fullmetal Alchemist",
         "elo_score": 1200,
         "merged_entries": 1
     },
@@ -744,6 +768,12 @@
         "merged_entries": 1
     },
     {
+        "id": 813,
+        "title": "Dragon Ball Z",
+        "elo_score": 1200,
+        "merged_entries": 3
+    },
+    {
         "id": 853,
         "title": "Ouran High School Host Club",
         "elo_score": 1200,
@@ -764,6 +794,408 @@
     {
         "id": 6880,
         "title": "Deadman Wonderland",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 889,
+        "title": "Black Lagoon",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 339,
+        "title": "Serial Experiments Lain",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 20807,
+        "title": "Prison School",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 98436,
+        "title": "The Ancient Magus' Bride",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 6045,
+        "title": "Kimi ni Todoke: From Me to You",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 20596,
+        "title": "Blue Spring Ride",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 15583,
+        "title": "Date A Live",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 10793,
+        "title": "Guilty Crown",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 10165,
+        "title": "Nichijou - My Ordinary Life",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 116267,
+        "title": "TONIKAWA: Over The Moon For You",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 108463,
+        "title": "Toilet-bound Hanako-kun",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 21092,
+        "title": "Chivalry of a Failed Knight",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 21857,
+        "title": "Masamune-kun's Revenge",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 17265,
+        "title": "Log Horizon",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 124153,
+        "title": "SK8 the Infinity",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 21647,
+        "title": "Orange",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 16592,
+        "title": "Danganronpa: The Animation",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 21709,
+        "title": "Yuri!!! on ICE",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 14513,
+        "title": "Magi: The Labyrinth of Magic",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 110349,
+        "title": "Great Pretender",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 159831,
+        "title": "Zom 100: Bucket List of the Dead",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 20727,
+        "title": "Blood Blockade Battlefront",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 100922,
+        "title": "Grand Blue Dreaming",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 20668,
+        "title": "Monthly Girls' Nozaki-kun",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 21127,
+        "title": "Steins;Gate 0",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 100668,
+        "title": "Arifureta",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 113717,
+        "title": "Ranking of Kings",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 103139,
+        "title": "Domestic Girlfriend",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 877,
+        "title": "NANA",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 108430,
+        "title": "Given",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 153518,
+        "title": "Delicious in Dungeon",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 33,
+        "title": "Berserk",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 126403,
+        "title": "Link Click",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 1210,
+        "title": "Welcome to the N-H-K",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 181444,
+        "title": "The Fragrant Flower Blooms With Dignity",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 21366,
+        "title": "March comes in like a lion",
+        "elo_score": 1200,
+        "merged_entries": 2
+    },
+    {
+        "id": 20607,
+        "title": "Ping Pong the Animation",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 98707,
+        "title": "Land of the Lustrous",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 7785,
+        "title": "The Tatami Galaxy",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 99426,
+        "title": "A Place Further Than the Universe",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 143270,
+        "title": "Lycoris Recoil",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 129201,
+        "title": "Summer Time Rendering",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 392,
+        "title": "Yu Yu Hakusho: Ghostfiles",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 178025,
+        "title": "Gachiakuta",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 14713,
+        "title": "Kamisama Kiss",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 245,
+        "title": "GTO: Great Teacher Onizuka",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 20770,
+        "title": "Yona of the Dawn",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 263,
+        "title": "Hajime no Ippo: The Fighting!",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 457,
+        "title": "MUSHI-SHI",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 98444,
+        "title": "Laid-Back Camp",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 155783,
+        "title": "Tengoku Daimakyo",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 105228,
+        "title": "Dorohedoro",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 128546,
+        "title": "Vivy -Fluorite Eye's Song-",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 232,
+        "title": "Cardcaptor Sakura",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 2251,
+        "title": "Baccano!",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 249,
+        "title": "InuYasha",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 128547,
+        "title": "ODDTAXI",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 6,
+        "title": "Trigun",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 185407,
+        "title": "Takopi's Original Sin",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 177709,
+        "title": "SAKAMOTO DAYS",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 177689,
+        "title": "The Summer Hikaru Died",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 163270,
+        "title": "WIND BREAKER",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 151970,
+        "title": "Shangri-La Frontier",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 156092,
+        "title": "To Be Hero X",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 180516,
+        "title": "Umamusume: Cinderella Gray",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 99088,
+        "title": "PLUTO",
+        "elo_score": 1200,
+        "merged_entries": 1
+    },
+    {
+        "id": 156067,
+        "title": "Campfire Cooking in Another World with my Absurd Skill",
         "elo_score": 1200,
         "merged_entries": 1
     }

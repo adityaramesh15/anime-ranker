@@ -5,7 +5,7 @@ import time
 
 def clean_and_group_anime():
     os.makedirs('data', exist_ok=True)
-    os.makedirs('data/images', exist_ok=True)
+    os.makedirs('frontend/images', exist_ok=True)
 
     with open('data/datasets/raw_anime_data.json', 'r', encoding='utf-8') as f:
         raw_data = json.load(f)
@@ -21,7 +21,7 @@ def clean_and_group_anime():
         for edge in item['relations']['edges']:
             relation_type = edge['relationType']
             
-            if relation_type in ['ALTERNATIVE', 'SPIN_OFF']:
+            if relation_type not in ['PREQUEL', 'SEQUEL', 'PARENT', 'SUMMARY']:
                 continue
                 
             related_id = edge['node']['id']
@@ -57,12 +57,12 @@ def clean_and_group_anime():
             continue 
         
         main_shows = [anime for anime in group if anime['format'] in valid_main_formats]
-        main_show = min(main_shows, key=lambda x: x['id'])
-        title = main_show['title']['english'] or main_show['title']['romaji']
+        main_show = max(main_shows, key=lambda x: x.get('popularity', 0))
+        title = main_show['title'].get('english') or main_show['title'].get('romaji') or "Unknown Title"
         
         anime_id = main_show['id']
         image_url = main_show['coverImage']['extraLarge']
-        image_path = f"data/images/{anime_id}.jpg"
+        image_path = f"frontend/images/{anime_id}.jpg"
         
         if not os.path.exists(image_path) and image_url:
             try:

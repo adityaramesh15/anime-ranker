@@ -10,6 +10,7 @@
     <nav>
         <a href="index.html">Matchup</a>
         <a href="leaderboard.html">Leaderboard</a>
+        <a href="watchlist.html">Watchlist</a>
         
         <span id="user-info" style="margin-left: 20px; color: #888;"></span>
         <button id="login-btn" style="padding: 5px 10px; font-size: 0.9rem;">Login with Google</button>
@@ -65,7 +66,8 @@
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // Update UI
-                userInfo.innerText = `Welcome, ${user.displayName}!`;
+                const firstName = user.displayName ? user.displayName.split(' ')[0] : 'Guest';
+                userInfo.innerText = `Welcome, ${firstName}!`;
                 loginBtn.style.display = 'none';
                 logoutBtn.style.display = 'inline-block';
                 

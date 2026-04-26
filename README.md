@@ -9,7 +9,7 @@ A full-stack, serverless web application that allows users to rank the top 150 a
 * **Database:** **Google Firestore** (NoSQL) for durable Elo score tracking.
 * **Data Pipeline:** Python scripts that fetch, clean, and consolidate franchise data from the **AniList GraphQL API**.
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 show-ranker/

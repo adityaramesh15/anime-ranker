@@ -121,6 +121,32 @@ class AnimeRanker:
                         
         batch.commit()
         return {"status": "success"}
+    
+    def get_watchlist(self, uid):
+        self._refresh_user_cache_if_needed(uid)
+        
+        watchlist = [anime for anime in self.user_caches.get(uid, []) if anime.get("ignored", False)]
+        return sorted(watchlist, key=lambda x: x['title'])
+
+    def unignore_show(self, uid, anime_id):
+        self._refresh_user_cache_if_needed(uid)
+        
+        doc_ref = (
+            self.db.collection("users")
+            .document(uid)
+            .collection("personal_anime")
+            .document(str(anime_id))
+        )
+        
+        doc_ref.update({"ignored": False})
+        
+        # Update the in-memory cache instantly
+        if uid in self.user_caches:
+            for anime in self.user_caches[uid]:
+                if str(anime["id"]) == str(anime_id):
+                    anime["ignored"] = False
+                    
+        return {"status": "success"}
 
     def process_match(self, uid, anime_a_id, anime_b_id, outcome):
         self._refresh_user_cache_if_needed(uid)

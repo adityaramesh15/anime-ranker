@@ -72,6 +72,30 @@ def ignore_shows():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/watchlist', methods=['GET'])
+def get_watchlist():
+    uid = request.args.get('uid')
+    if not uid:
+        return jsonify({"error": "Missing User ID"}), 400
+    try:
+        watchlist = ranker.get_watchlist(uid)
+        return jsonify(watchlist), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/unignore', methods=['POST'])
+def unignore_show():
+    data = request.json
+    uid = data.get('uid')
+    anime_id = data.get('anime_id')
+    
+    if not uid or not anime_id:
+        return jsonify({"error": "Invalid payload."}), 400
+    try:
+        result = ranker.unignore_show(uid, anime_id)
+        return jsonify(result), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)
