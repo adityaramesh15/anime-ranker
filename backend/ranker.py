@@ -12,7 +12,7 @@ class AnimeRanker:
 
         self.global_cache = []
         self.global_last_update = 0
-        self.CACHE_TTL = 300  # 5 minutes
+        self.CACHE_TTL = 3600  # 1 hour
 
         self.user_caches = TTLCache(maxsize=250, ttl=3600)
 
@@ -28,20 +28,48 @@ class AnimeRanker:
 
     def _refresh_user_cache_if_needed(self, uid):
         if uid not in self.user_caches:
+            self._refresh_global_cache_if_needed()
+            
             personal_ref = (
                 self.db.collection("users")
                 .document(uid)
                 .collection("personal_anime")
             )
 
-            docs = list(personal_ref.stream())
+            docs_ref = list(personal_ref.stream())
+            docs = [doc.to_dict() for doc in docs_ref]
 
-            if len(docs) == 0:
-                print(f"New user detected ({uid}). Initializing baseline stats...")
-                self._initialize_new_user(uid)
-                docs = list(personal_ref.stream())
+            if len(docs) < len(self.global_cache):
+                print(f"Syncing missing shows for user ({uid})...")
+                new_shows = self._sync_missing_shows(uid, docs_ref)
+                
+                docs.extend(new_shows) 
 
-            self.user_caches[uid] = [doc.to_dict() for doc in docs]
+            self.user_caches[uid] = docs
+
+    def _sync_missing_shows(self, uid, existing_docs_ref):
+        batch = self.db.batch()
+        personal_ref = (
+            self.db.collection("users")
+            .document(uid)
+            .collection("personal_anime")
+        )
+
+        existing_ids = {doc.id for doc in existing_docs_ref}
+        new_shows_added = []
+
+        for anime in self.global_cache:
+            if str(anime["id"]) not in existing_ids:
+                doc_ref = personal_ref.document(str(anime["id"]))
+                base_anime = anime.copy()
+                base_anime["elo_score"] = 1200
+                base_anime["ignored"] = False 
+                batch.set(doc_ref, base_anime)
+                
+                new_shows_added.append(base_anime)
+
+        batch.commit()
+        return new_shows_added
 
     def _initialize_new_user(self, uid):
         self._refresh_global_cache_if_needed()
