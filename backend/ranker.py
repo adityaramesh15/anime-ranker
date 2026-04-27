@@ -83,12 +83,11 @@ class AnimeRanker:
 
         global_sorted = sorted(
             self.global_cache,
-            key=lambda x: x.get("elo_score", 1200),
-            reverse=True,
+            key=lambda x: (x.get("matches_played", 0) == 0, -x.get("elo_score", 1200))
         )
 
         watched_personal_shows = [anime for anime in self.user_caches[uid] if not anime.get("ignored", False)]
-
+        
         personal_sorted = sorted(
             watched_personal_shows,
             key=lambda x: x.get("elo_score", 1200),
@@ -199,6 +198,9 @@ class AnimeRanker:
             outcome,
         )
 
+        g_a_matches = g_a.get("matches_played", 0) + 1
+        g_b_matches = g_b.get("matches_played", 0) + 1
+
         new_p_a, new_p_b = calc_new_elo(
             p_a.get("elo_score", 1200),
             p_b.get("elo_score", 1200),
@@ -206,8 +208,8 @@ class AnimeRanker:
         )
 
         batch = self.db.batch()
-        batch.update(global_a_ref, {"elo_score": new_g_a})
-        batch.update(global_b_ref, {"elo_score": new_g_b})
+        batch.update(global_a_ref, {"elo_score": new_g_a, "matches_played": g_a_matches})
+        batch.update(global_b_ref, {"elo_score": new_g_b, "matches_played": g_b_matches})
         batch.update(pers_a_ref, {"elo_score": new_p_a})
         batch.update(pers_b_ref, {"elo_score": new_p_b})
         batch.commit()
@@ -216,8 +218,10 @@ class AnimeRanker:
         for anime in self.global_cache:
             if str(anime["id"]) == str(anime_a_id):
                 anime["elo_score"] = new_g_a
+                anime["matches_played"] = g_a_matches
             elif str(anime["id"]) == str(anime_b_id):
                 anime["elo_score"] = new_g_b
+                anime["matches_played"] = g_b_matches
 
         # Update in-memory user cache
         if uid in self.user_caches:

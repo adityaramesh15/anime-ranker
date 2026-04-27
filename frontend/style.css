@@ -241,16 +241,35 @@ button:active {
     border-radius: 20px;
 }
 
+.unranked-item {
+    opacity: 0.5;
+    background-color: #1a1a1a;
+}
+.unranked-badge {
+    font-size: 0.8rem;
+    color: #888;
+    background-color: #333;
+    padding: 3px 6px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
 /* ===== Mobile Layout ===== */
 @media (max-width: 680px) {
     body {
         padding: 8px 10px;
     }
 
+    #user-info {
+        display: none; /* Hides the welcome message completely on phones */
+    }
+    
     nav {
-        padding: 8px 14px;
-        gap: 12px;
+        padding: 8px 10px;
+        gap: 8px; /* Tighter gap for small screens */
         margin-bottom: 6px;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     nav a {

@@ -130,11 +130,17 @@
             dataToShow.forEach((anime, index) => {
                 const li = document.createElement('li');
                 li.className = 'leaderboard-item';
+                
+                const isUnrankedGlobal = type === 'global' && (anime.matches_played === 0 || anime.matches_played === undefined);
+                if (isUnrankedGlobal) {
+                    li.classList.add('unranked-item');
+                }
+
                 li.innerHTML = `
-                    <span class="rank">#${index + 1}</span>
+                    <span class="rank">${isUnrankedGlobal ? '—' : '#' + (index + 1)}</span>
                     <img src="images/${anime.id}.jpg" alt="${anime.title}">
-                    <span class="title">${anime.title}</span>
-                    <span class="score">${anime.elo_score} Elo</span>
+                    <span class="title">${anime.title} ${isUnrankedGlobal ? '<span class="unranked-badge">Unranked</span>' : ''}</span>
+                    <span class="score">${isUnrankedGlobal ? '—' : anime.elo_score + ' Elo'}</span>
                 `;
                 listEl.appendChild(li);
             });
