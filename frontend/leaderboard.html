@@ -138,7 +138,7 @@
 
                 li.innerHTML = `
                     <span class="rank">${isUnrankedGlobal ? '—' : '#' + (index + 1)}</span>
-                    <img src="images/${anime.id}.jpg" alt="${anime.title}">
+                    <img src="images/${anime.id}.webp" alt="${anime.title}">
                     <span class="title">${anime.title} ${isUnrankedGlobal ? '<span class="unranked-badge">Unranked</span>' : ''}</span>
                     <span class="score">${isUnrankedGlobal ? '—' : anime.elo_score + ' Elo'}</span>
                 `;
