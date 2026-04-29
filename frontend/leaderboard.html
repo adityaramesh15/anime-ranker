@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-675E716Y2L"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-675E716Y2L');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-675E716Y2L');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Ranker - Leaderboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
     <nav>
@@ -21,25 +19,29 @@
         <a href="leaderboard.html">Leaderboard</a>
         <a href="watchlist.html">Watchlist</a>
         
-        <span id="user-info" style="margin-left: 20px; color: #888;"></span>
-        <button id="login-btn" style="padding: 5px 10px; font-size: 0.9rem;">Login with Google</button>
-        <button id="logout-btn" style="display: none; padding: 5px 10px; font-size: 0.9rem; background-color: #d32f2f;">Logout</button>
+        <span id="user-info"></span>
+        <button id="login-btn">Login with Google</button>
+        <button id="logout-btn" style="display: none;">Logout</button>
     </nav>
 
-    <h1>Leaderboards</h1>
-    
-    <div id="auth-warning">Please log in on the Matchup page to view your leaderboards.</div>
-
-    <div id="leaderboard-content" style="display: none;">
-        <div class="controls" style="margin-bottom: 20px;">
-            <button onclick="showList('personal')" id="btn-personal" style="background-color: var(--hover-color);">My Rankings</button>
-            <button onclick="showList('global')" id="btn-global">Global Rankings</button>
-        </div>
-
-        <div id="loading">Fetching live scores...</div>
+    <div class="page-container">
+        <h1>Leaderboards</h1>
         
-        <ol class="leaderboard-list" id="leaderboard-list">
-            </ol>
+        <div id="auth-warning" class="auth-warning-box">Please log in to view leaderboards!</div>
+
+        <div id="leaderboard-content" style="display: none;">
+            <div class="controls-wrapper">
+                <div class="controls">
+                    <button onclick="showList('personal')" id="btn-personal" class="active-toggle">My Rankings</button>
+                    <button onclick="showList('global')" id="btn-global">Global Rankings</button>
+                    <button onclick="exportTop10()" id="btn-export" class="export-btn">Copy Top 10</button>
+                </div>
+            </div>
+
+            <div id="loading">Fetching live scores...</div>
+            
+            <ol class="leaderboard-list" id="leaderboard-list"></ol>
+        </div>
     </div>
 
     <script type="module">
@@ -117,9 +119,7 @@
                 personalData = data.personal;
 
                 document.getElementById('loading').style.display = 'none';
-                
-                // Default to showing personal
-                showList('personal');
+                showList('personal'); // Default to showing personal
             } catch (error) {
                 console.error("Error fetching leaderboard:", error);
                 document.getElementById('loading').innerText = "Error loading data.";
@@ -132,13 +132,17 @@
             
             const dataToShow = type === 'personal' ? personalData : globalData;
 
-            // Update button styles to show which is active
-            document.getElementById('btn-personal').style.backgroundColor = type === 'personal' ? 'var(--hover-color)' : 'var(--primary-color)';
-            document.getElementById('btn-global').style.backgroundColor = type === 'global' ? 'var(--hover-color)' : 'var(--primary-color)';
+            // Update button styles using the CSS class
+            document.getElementById('btn-personal').classList.toggle('active-toggle', type === 'personal');
+            document.getElementById('btn-global').classList.toggle('active-toggle', type === 'global');
+            
+            // Hide export button when viewing Global Rankings
+            document.getElementById('btn-export').style.display = type === 'personal' ? 'inline-flex' : 'none';
 
             dataToShow.forEach((anime, index) => {
                 const li = document.createElement('li');
                 li.className = 'leaderboard-item';
+                li.style.animationDelay = `${index * 0.04}s`;
                 
                 const isUnrankedGlobal = type === 'global' && (anime.matches_played === 0 || anime.matches_played === undefined);
                 if (isUnrankedGlobal) {
@@ -153,6 +157,32 @@
                 `;
                 listEl.appendChild(li);
             });
+        }
+
+        async function exportTop10() {
+            if (!personalData || personalData.length === 0) {
+                alert("You don't have any ranked shows yet!");
+                return;
+            }
+
+            const top10 = personalData.slice(0, 10);
+            
+            let formattedText = "🏆 My Top 10 Anime 🏆\n\n";
+            top10.forEach((anime, index) => {
+                formattedText += `${index + 1}. ${anime.title} (${anime.elo_score} Elo)\n`;
+            });
+
+            try {
+                await navigator.clipboard.writeText(formattedText);
+                const btn = document.getElementById('btn-export');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = "Copied!";
+                setTimeout(() => { btn.innerHTML = originalText; }, 2000); 
+                
+            } catch (err) {
+                console.error("Failed to copy text: ", err);
+                alert("Clipboard copy failed. Please try again.");
+            }
         }
     </script>
 </body>

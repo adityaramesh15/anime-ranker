@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
 
+/* =========================================
+   1. VARIABLES & THEME
+========================================= */
 :root {
     --bg-color: #0f1115;
     --card-bg: rgba(30, 33, 40, 0.7);
@@ -12,6 +15,9 @@
     --accent-glow: rgba(99, 102, 241, 0.4);
 }
 
+/* =========================================
+   2. BASE & TYPOGRAPHY
+========================================= */
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--bg-color);
@@ -26,10 +32,29 @@ body {
     min-height: -webkit-fill-available;
     box-sizing: border-box;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 4px;
+    background: linear-gradient(to right, #a5b4fc, #818cf8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+/* =========================================
+   3. NAVIGATION & AUTH
+========================================= */
 nav {
-    display: flex;
+    display: inline-flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-bottom: 8px;
@@ -38,8 +63,13 @@ nav {
     backdrop-filter: blur(10px);
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    display: inline-flex;
-    gap: 20px;
+    gap: 12px 20px;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 nav a {
@@ -55,76 +85,28 @@ nav a:hover {
     text-shadow: 0 0 10px var(--accent-glow);
 }
 
-h1 {
-    font-weight: 700;
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 4px;
-    background: linear-gradient(to right, #a5b4fc, #818cf8);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+#user-info {
+    margin-left: 20px;
+    color: var(--text-muted);
 }
 
-/* Matchup Page Styles */
-.matchup-container {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 8px;
+#login-btn, #logout-btn {
+    padding: 6px 12px;
+    font-size: 0.9rem;
 }
 
-.anime-card {
-    background-color: var(--card-bg);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 14px;
-    width: min(250px, 30vh);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+#logout-btn {
+    background-color: #d32f2f;
 }
 
-.anime-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
-    border-color: rgba(99, 102, 241, 0.3);
+#logout-btn:hover {
+    background-color: #b71c1c;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
 }
 
-.anime-card img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 46 / 64; /* Creates the perfect box shape based on the 250px width */
-    object-fit: cover; /* Fills the box completely edge-to-edge. Zooms/crops slightly if image isn't perfectly 46/64 */
-    border-radius: 12px;
-    margin-bottom: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    transition: transform 0.4s ease;
-}
-
-.anime-card:hover img {
-    transform: scale(1.03);
-}
-
-.anime-card h2 {
-    font-size: 1.05rem;
-    margin-bottom: 6px;
-    font-weight: 600;
-    line-height: 1.3;
-}
-
-.button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
+/* =========================================
+   4. BUTTONS & CONTROLS
+========================================= */
 button {
     background-color: var(--primary-color);
     color: white;
@@ -166,13 +148,18 @@ button:active {
     box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3);
 }
 
+.controls-wrapper {
+    max-width: 650px;
+    margin: 0 auto 20px auto;
+}
+
 .controls {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 16px;
-    padding: 0 20px;
-    margin-top: 4px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0;
 }
 
 .controls button {
@@ -180,14 +167,132 @@ button:active {
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.05);
     color: var(--text-color);
+    transition: all 0.3s ease;
 }
 
-.controls button:hover {
+.controls button.active-toggle {
+    background-color: var(--primary-color);
+    border-color: var(--primary-hover);
+    box-shadow: 0 4px 15px var(--accent-glow);
+    color: white;
+}
+
+.controls button:hover:not(.active-toggle) {
     background-color: rgba(71, 85, 105, 0.8);
     border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Leaderboard Styles */
+/* =========================================
+   5. MATCHUP CARDS
+========================================= */
+.matchup-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.anime-card {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 14px;
+    width: min(250px, 30vh);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s;
+}
+
+.anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.anime-card img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 46 / 64; 
+    object-fit: cover; 
+    border-radius: 12px;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease;
+}
+
+.anime-card:hover img {
+    transform: scale(1.03);
+}
+
+.anime-card h2 {
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* =========================================
+   6. LEADERBOARD COMPONENTS
+========================================= */
+.export-btn {
+    background-color: #10b981 !important;
+    border-color: #10b981 !important;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: white !important;
+    margin-left: 4px;
+}
+
+.export-btn:hover {
+    background-color: #059669 !important;
+    border-color: #059669 !important;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3) !important;
+}
+
+.auth-warning-box {
+    color: var(--text-muted);
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 24px 32px;
+    margin: 20px auto;
+    max-width: 500px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+#loading {
+    color: var(--text-muted);
+    font-size: 1rem;
+    padding: 20px;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .leaderboard-list {
     max-width: 650px;
     margin: 0 auto;
@@ -200,13 +305,14 @@ button:active {
     background-color: var(--card-bg);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    margin-bottom: 12px;
-    padding: 12px 20px;
+    margin-bottom: 10px;
+    padding: 10px 16px;
     border-radius: 12px;
     display: flex;
     align-items: center;
-    font-size: 1.1rem;
-    transition: transform 0.2s, background-color 0.2s;
+    font-size: 1.05rem;
+    transition: transform 0.2s, background-color 0.2s, border-color 0.2s;
+    animation: fadeInUp 0.35s ease both;
 }
 
 .leaderboard-item:hover {
@@ -216,12 +322,20 @@ button:active {
 }
 
 .leaderboard-item img {
-    width: 60px;
-    height: 84px;
+    width: 54px;
+    height: 76px;
     object-fit: cover;
     border-radius: 6px;
-    margin: 0 20px;
+    margin: 0 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+}
+
+.leaderboard-item .title {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .rank {
@@ -229,7 +343,8 @@ button:active {
     color: #a5b4fc;
     width: 40px; 
     flex-shrink: 0;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    text-align: center;
 }
 
 .score {
@@ -237,39 +352,47 @@ button:active {
     font-weight: 600;
     color: var(--text-muted);
     background: rgba(255,255,255,0.05);
-    padding: 6px 12px;
+    padding: 5px 12px;
     border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .unranked-item {
     opacity: 0.5;
-    background-color: #1a1a1a;
-}
-.unranked-badge {
-    font-size: 0.8rem;
-    color: #888;
-    background-color: #333;
-    padding: 3px 6px;
-    border-radius: 4px;
-    margin-left: 10px;
+    background-color: rgba(26, 26, 26, 0.6);
 }
 
-/* ===== Mobile Layout ===== */
+.unranked-badge {
+    font-size: 0.75rem;
+    color: #888;
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* =========================================
+   7. RESPONSIVE DESIGN (MOBILE)
+========================================= */
 @media (max-width: 680px) {
     body {
         padding: 8px 10px;
     }
 
     #user-info {
-        display: none; /* Hides the welcome message completely on phones */
+        display: none; 
     }
     
     nav {
-        padding: 8px 10px;
-        gap: 8px; /* Tighter gap for small screens */
+        padding: 8px 12px;
+        gap: 6px 12px;
         margin-bottom: 6px;
         max-width: 100%;
         box-sizing: border-box;
+        border-radius: 14px;
     }
 
     nav a {
@@ -294,8 +417,6 @@ button:active {
     }
 
     .anime-card img {
-        /* height: 28vh;
-        max-height: 200px; */
         border-radius: 8px;
         margin-bottom: 6px;
     }
@@ -322,7 +443,7 @@ button:active {
 
     .controls {
         gap: 8px;
-        padding: 0 8px;
+        padding: 0;
         margin-top: 2px;
     }
 
@@ -330,15 +451,41 @@ button:active {
         padding: 8px 14px;
         font-size: 0.85rem;
     }
+
+    .export-btn {
+        font-size: 0.8rem !important;
+        padding: 7px 12px;
+    }
+
+    .leaderboard-item {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+
+    .leaderboard-item img {
+        width: 44px;
+        height: 62px;
+        margin: 0 10px;
+    }
+
+    .rank {
+        width: 32px;
+        font-size: 1rem;
+    }
+
+    .score {
+        padding: 4px 10px;
+        font-size: 0.8rem;
+    }
+
+    .auth-warning-box {
+        padding: 18px 20px;
+        font-size: 0.95rem;
+        margin: 16px auto;
+    }
 }
 
-/* Very small phones */
 @media (max-width: 400px) {
-    /* .anime-card img {
-        height: 24vh;
-        max-height: 160px;
-    } */
-
     .anime-card h2 {
         font-size: 0.78rem;
     }
@@ -346,5 +493,14 @@ button:active {
     button {
         padding: 7px 10px;
         font-size: 0.8rem;
+    }
+
+    .controls {
+        gap: 6px;
+    }
+
+    .controls button {
+        padding: 7px 10px;
+        font-size: 0.78rem;
     }
 }

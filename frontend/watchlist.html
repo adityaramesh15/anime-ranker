@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Ranker - Watchlist</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
     <style>
         .watchlist-grid {
             display: grid;
@@ -124,6 +124,15 @@
             color: #a5b4fc;
             font-weight: 600;
         }
+
+        .anilist-link {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .anilist-link:hover {
+            color: #a5b4fc; 
+        }
     </style>
 </head>
 <body>
@@ -140,7 +149,7 @@
     <h1>My Watchlist</h1>
     <p class="subtitle">Shows you marked as unwatched. Add them back to your ranking pool once you've seen them!</p>
 
-    <div id="auth-warning">Please log in to view your watchlist.</div>
+    <div id="auth-warning" class="auth-warning-box">Please log in to view watchlist!</div>
     <div id="loading" style="display: none;">Fetching watchlist...</div>
     <div id="show-count" class="show-count" style="display: none;"></div>
     
@@ -239,7 +248,7 @@
                     card.id = `card-${anime.id}`;
                     card.innerHTML = `
                         <img src="images/${anime.id}.webp" alt="${anime.title}">
-                        <h3>${anime.title}</h3>
+                        <h3><a href="https://anilist.co/anime/${anime.id}" target="_blank" class="anilist-link">${anime.title}</a></h3>
                         <button class="add-back-btn" onclick="unignoreAnime(${anime.id})">I've watched it!</button>
                     `;
                     grid.appendChild(card);

@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime Ranker - Vote</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
     <nav>
@@ -28,7 +28,8 @@
 
     <h1>Which is better?</h1>
     
-    <div id="loading" style="display: none;">Please log in to start ranking!</div>
+    <div id="auth-warning" class="auth-warning-box" style="display: none;">Please log in to start ranking!</div>
+    <div id="loading" style="display: none;">Loading...</div>
 
     <div class="matchup-container" id="matchup-container" style="display: none;">
         <div class="anime-card" id="card-a">
@@ -85,6 +86,7 @@
         const logoutBtn = document.getElementById('logout-btn');
         const userInfo = document.getElementById('user-info');
         const loadingDiv = document.getElementById('loading');
+        const authWarning = document.getElementById('auth-warning');
 
         loginBtn.addEventListener('click', () => {
             signInWithPopup(auth, provider).catch(error => console.error("Login failed:", error));
@@ -102,6 +104,7 @@
                 userInfo.innerText = `Welcome, ${firstName}!`;
                 loginBtn.style.display = 'none';
                 logoutBtn.style.display = 'inline-block';
+                authWarning.style.display = 'none';
                 
                 // Now that they are logged in, fetch the matchup!
                 fetchMatchup();
@@ -114,8 +117,8 @@
                 // Hide game UI
                 document.getElementById('matchup-container').style.display = 'none';
                 document.getElementById('controls').style.display = 'none';
-                loadingDiv.style.display = 'block';
-                loadingDiv.innerText = "Please log in to start ranking!";
+                loadingDiv.style.display = 'none';
+                authWarning.style.display = 'block';
             }
         });
     </script>
