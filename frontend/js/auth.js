@@ -41,7 +41,15 @@ export function initAuth(onLoginCallback, onLogoutCallback) {
     });
 }
 
-function showDisplayNameModal(user, onLoginCallback) {
+export function logoutUser() {
+    signOut(auth).then(() => {
+        window.location.href = 'index.html';
+    }).catch((error) => {
+        console.error("Sign out error", error);
+    });
+}
+
+export function showDisplayNameModal(user, onLoginCallback) {
     let modal = document.getElementById('display-name-modal');
     if (!modal) {
         modal = document.createElement('div');
@@ -115,7 +123,14 @@ function completeLogin(user, displayName, onLoginCallback) {
     
     if (profileLink && profilePic) {
         profileLink.style.display = 'inline-block';
-        profilePic.src = user.photoURL || '/frontend/images/default.webp';
+        
+        let photoSrc = user.photoURL;
+    
+        if (photoSrc && photoSrc.startsWith('http://')) {
+            photoSrc = photoSrc.replace('http://', 'https://');
+        }
+        
+        profilePic.src = photoSrc || './frontend/images/default.webp';
     }
     
     if (authWarning) authWarning.style.display = 'none';

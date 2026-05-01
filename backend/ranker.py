@@ -348,3 +348,25 @@ class AnimeRanker:
             "biggest_positive_divergence": biggest_positive,
             "biggest_negative_divergence": biggest_negative
         }
+
+    def reset_account(self, uid):
+        self._refresh_user_cache_if_needed(uid)
+        
+        batch = self.db.batch()
+        user_ref = self.db.collection("users").document(uid)
+        batch.update(user_ref, {"total_matches": 0})
+        
+        personal_ref = self.db.collection("users").document(uid).collection("personal_anime")
+        docs = personal_ref.stream()
+        
+        for doc in docs:
+            batch.update(doc.reference, {"elo_score": 1200, "ignored": False})
+            
+        batch.commit()
+            
+        if uid in self.user_caches:
+            for anime in self.user_caches[uid]:
+                anime["elo_score"] = 1200
+                anime["ignored"] = False
+                
+        return {"status": "success"}

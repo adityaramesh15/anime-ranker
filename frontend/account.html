@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-675E716Y2L"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-675E716Y2L');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Ranker - Account</title>
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Matchup</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="watchlist.html">Watchlist</a>
+        
+        <button id="login-btn" style="padding: 5px 10px; font-size: 0.9rem;">Login with Google</button>
+        <a href="account.html" id="profile-link" style="display: none; margin-left: 15px; vertical-align: middle;">
+            <img id="profile-pic" src="" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--primary-color); object-fit: cover;">
+        </a>
+    </nav>
+
+    <h1>My Account</h1>
+    
+    <div id="auth-warning" class="auth-warning-box" style="display: none;">Please log in!</div>
+
+    <div class="page-container" id="account-container" style="display: none;">
+        
+        <div class="profile-section">
+            <img id="account-pic" referrerpolicy="no-referrer" src="/frontend/images/default.webp" alt="Profile Picture">
+            <h2 id="account-name">Loading...</h2>
+            <button id="edit-name-btn" class="secondary-btn edit-btn">Edit Display Name</button>
+        </div>
+
+        <div class="stats-grid" id="stats-grid">
+            <div class="stat-card">
+                <h3>Total Matches</h3>
+                <p class="stat-value" id="stat-matches">-</p>
+                <span class="stat-subtext">Global votes cast</span>
+            </div>
+            <div class="stat-card">
+                <h3>Completion</h3>
+                <p class="stat-value" id="stat-completion">-%</p>
+                <span class="stat-subtext">Of global database</span>
+            </div>
+            <div class="stat-card">
+                <h3>Top 10 Alignment</h3>
+                <p class="stat-value" id="stat-alignment">-%</p>
+                <span class="stat-subtext">With global top 10</span>
+            </div>
+            <div class="stat-card">
+                <h3>Most Positive Divergence</h3>
+                <p class="stat-value" id="stat-pos-diff" style="font-size: 1.4rem;">-</p>
+                <span class="stat-subtext" id="stat-pos-title" style="color: #10b981;">N/A</span>
+            </div>
+            <div class="stat-card">
+                <h3>Most Negative Divergence</h3>
+                <p class="stat-value" id="stat-neg-diff" style="font-size: 1.4rem;">-</p>
+                <span class="stat-subtext" id="stat-neg-title" style="color: #ef4444;">N/A</span>
+            </div>
+        </div>
+
+        <div class="account-actions">
+            <button id="logout-btn" class="secondary-btn">Sign Out</button>
+            <button id="reset-btn" class="danger-btn">Reset Personal Rankings</button>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initAuth, logoutUser, showDisplayNameModal } from './js/auth.js';
+        import { API_BASE } from './js/api.js';
+
+        let currentUser = null;
+
+        initAuth(
+            async (user) => {
+                currentUser = user;
+                document.getElementById('account-container').style.display = 'block';
+                document.getElementById('account-pic').src = user.photoURL || '/frontend/images/default.webp';
+                document.getElementById('account-name').textContent = window.currentUserDisplayName || "User";
+                
+                loadStats(user.uid);
+            },
+            () => {
+                document.getElementById('account-container').style.display = 'none';
+            }
+        );
+
+        async function loadStats(uid) {
+            try {
+                const res = await fetch(`${API_BASE}/stats?uid=${uid}`);
+                const data = await res.json();
+                
+                if (data.error) throw new Error(data.error);
+
+                document.getElementById('stat-matches').textContent = data.total_matches;
+                document.getElementById('stat-completion').textContent = data.completion_percentage + '%';
+                document.getElementById('stat-alignment').textContent = data.alignment_percentage + '%';
+                
+                document.getElementById('stat-pos-diff').textContent = '+' + data.biggest_positive_divergence.diff;
+                document.getElementById('stat-pos-title').textContent = data.biggest_positive_divergence.title;
+                
+                document.getElementById('stat-neg-diff').textContent = data.biggest_negative_divergence.diff;
+                document.getElementById('stat-neg-title').textContent = data.biggest_negative_divergence.title;
+            } catch (e) {
+                console.error("Error loading stats:", e);
+            }
+        }
+
+        document.getElementById('logout-btn').addEventListener('click', () => {
+            logoutUser();
+        });
+
+        document.getElementById('edit-name-btn').addEventListener('click', () => {
+            if (currentUser) {
+                showDisplayNameModal(currentUser, () => {
+                    document.getElementById('account-name').textContent = window.currentUserDisplayName;
+                });
+            }
+        });
+
+        document.getElementById('reset-btn').addEventListener('click', async () => {
+            if (!currentUser) return;
+            
+            const confirmed = confirm("Are you sure you want to reset all your personal rankings? This cannot be undone.");
+            if (!confirmed) return;
+
+            try {
+                const btn = document.getElementById('reset-btn');
+                btn.disabled = true;
+                btn.textContent = "Resetting...";
+
+                const res = await fetch(`${API_BASE}/reset_account`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ uid: currentUser.uid })
+                });
+
+                if (res.ok) {
+                    alert("Your rankings have been reset.");
+                    loadStats(currentUser.uid); // Reload stats after reset
+                } else {
+                    const data = await res.json();
+                    alert("Failed to reset: " + (data.error || "Unknown error"));
+                }
+            } catch (e) {
+                alert("An error occurred during reset.");
+                console.error(e);
+            } finally {
+                const btn = document.getElementById('reset-btn');
+                btn.disabled = false;
+                btn.textContent = "Reset Personal Rankings";
+            }
+        });
+    </script>
+</body>
+</html>

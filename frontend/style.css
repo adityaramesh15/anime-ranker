@@ -139,7 +139,7 @@ button:active {
     background-color: var(--secondary-color);
     font-size: 0.9rem;
     padding: 8px 16px;
-    color: var(--text-muted);
+    /* color: var(--text-muted); */
 }
 
 .secondary-btn:hover {
@@ -377,7 +377,99 @@ button:active {
 }
 
 /* =========================================
-   7. RESPONSIVE DESIGN (MOBILE)
+   7. ACCOUNT DASHBOARD
+========================================= */
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-section img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-section h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.profile-section .edit-btn {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card h3 {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.stat-card .stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    text-shadow: 0 0 10px rgba(99, 102, 241, 0.4);
+}
+
+.stat-card .stat-subtext {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 5px;
+    display: block;
+}
+
+.danger-btn {
+    background-color: rgba(220, 38, 38, 0.8) !important;
+    border-color: rgba(239, 68, 68, 0.8) !important;
+    color: white !important;
+}
+
+.danger-btn:hover {
+    background-color: #dc2626 !important;
+    border-color: #ef4444 !important;
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3) !important;
+}
+
+.account-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================================
+   8. RESPONSIVE DESIGN (MOBILE)
 ========================================= */
 @media (max-width: 680px) {
     body {

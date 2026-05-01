@@ -139,5 +139,17 @@ def get_stats():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/reset_account', methods=['POST'])
+def reset_account():
+    data = request.json
+    uid = data.get("uid")
+    if not uid:
+        return jsonify({"error": "Missing User ID"}), 400
+    try:
+        response = ranker.reset_account(uid)
+        return jsonify(response), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)

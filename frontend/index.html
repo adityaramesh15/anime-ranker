@@ -23,7 +23,7 @@
         
         <button id="login-btn" style="padding: 5px 10px; font-size: 0.9rem;">Login with Google</button>
         <a href="account.html" id="profile-link" style="display: none; margin-left: 15px; vertical-align: middle;">
-            <img id="profile-pic" src="" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--primary-color); object-fit: cover;">
+            <img id="profile-pic" src="" referrerpolicy="no-referrer" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--primary-color); object-fit: cover;">
         </a>
     </nav>
 
@@ -39,7 +39,7 @@
                 <h2 id="title-a">Anime A</h2>
                 <div class="button-group">
                     <button class="primary-btn" onclick="submitVote(1)">Choose This</button>
-                    <button class="secondary-btn" onclick="markUnwatched([currentShowA.id])">Haven't seen this</button>
+                    <button class="secondary-btn" onclick="markUnwatchedA()">Haven't seen this</button>
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
                 <h2 id="title-b">Anime B</h2>
                 <div class="button-group">
                     <button class="primary-btn" onclick="submitVote(0)">Choose This</button>
-                    <button class="secondary-btn" onclick="markUnwatched([currentShowB.id])">Haven't seen this</button>
+                    <button class="secondary-btn" onclick="markUnwatchedB()">Haven't seen this</button>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
     <div class="controls" id="controls" style="display: none;">
         <button onclick="submitVote(0.5)"> Tie</button>
         <!-- <button onclick="skipMatch()">Skip (Keep in pool)</button> -->
-        <button onclick="markUnwatched([currentShowA.id, currentShowB.id])">Seen Neither</button>
+        <button onclick="markUnwatchedBoth()">Seen Neither</button>
     </div>
 
     <script type="module">
@@ -157,6 +157,18 @@
                 console.error("Error ignoring shows:", error);
                 document.getElementById('loading').innerText = "Error! Please refresh.";
             }
+        };
+
+        window.markUnwatchedA = function() {
+            if (currentShowA) window.markUnwatched([currentShowA.id]);
+        };
+
+        window.markUnwatchedB = function() {
+            if (currentShowB) window.markUnwatched([currentShowB.id]);
+        };
+
+        window.markUnwatchedBoth = function() {
+            if (currentShowA && currentShowB) window.markUnwatched([currentShowA.id, currentShowB.id]);
         };
 
         window.skipMatch = function() {
