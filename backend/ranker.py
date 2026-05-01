@@ -274,6 +274,10 @@ class AnimeRanker:
         batch.update(global_b_ref, {"elo_score": new_g_b, "matches_played": g_b_matches})
         batch.update(pers_a_ref, {"elo_score": new_p_a})
         batch.update(pers_b_ref, {"elo_score": new_p_b})
+        
+        user_ref = self.db.collection("users").document(uid)
+        batch.update(user_ref, {"total_matches": firestore.Increment(1)})
+
         batch.commit()
 
         # Update in-memory global cache
@@ -294,3 +298,53 @@ class AnimeRanker:
                     anime["elo_score"] = new_p_b
 
         return {"status": "success"}
+
+    def get_stats(self, uid):
+        user_doc = self.get_user(uid)
+        if not user_doc:
+            raise ValueError("User not found")
+
+        total_matches = user_doc.get("total_matches", 0)
+
+        self._refresh_global_cache_if_needed()
+        self._refresh_user_cache_if_needed(uid)
+
+        total_global = len(self.global_cache)
+        watched_shows = [anime for anime in self.user_caches.get(uid, []) if not anime.get("ignored", False)]
+        watched_count = len(watched_shows)
+
+        completion_percentage = (watched_count / total_global * 100) if total_global > 0 else 0
+
+        global_sorted = sorted(self.global_cache, key=lambda x: (x.get("matches_played", 0) == 0, -x.get("elo_score", 1200)))
+        global_top_10_ids = {str(a["id"]) for a in global_sorted[:10]}
+
+        personal_sorted = sorted(watched_shows, key=lambda x: x.get("elo_score", 1200), reverse=True)
+        personal_top_10_ids = {str(a["id"]) for a in personal_sorted[:10]}
+
+        intersection = global_top_10_ids.intersection(personal_top_10_ids)
+        alignment_percentage = (len(intersection) / 10) * 100
+
+        biggest_positive = {"title": "N/A", "diff": 0}
+        biggest_negative = {"title": "N/A", "diff": 0}
+
+        global_dict = {str(a["id"]): a for a in self.global_cache}
+
+        for p_anime in watched_shows:
+            g_anime = global_dict.get(str(p_anime["id"]))
+            if g_anime:
+                p_elo = p_anime.get("elo_score", 1200)
+                g_elo = g_anime.get("elo_score", 1200)
+                diff = p_elo - g_elo
+
+                if diff > biggest_positive["diff"]:
+                    biggest_positive = {"title": p_anime.get("title", "Unknown"), "diff": round(diff)}
+                elif diff < biggest_negative["diff"]:
+                    biggest_negative = {"title": p_anime.get("title", "Unknown"), "diff": round(diff)}
+
+        return {
+            "total_matches": total_matches,
+            "completion_percentage": round(completion_percentage, 1),
+            "alignment_percentage": round(alignment_percentage, 1),
+            "biggest_positive_divergence": biggest_positive,
+            "biggest_negative_divergence": biggest_negative
+        }

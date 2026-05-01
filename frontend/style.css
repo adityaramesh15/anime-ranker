@@ -57,7 +57,7 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
     padding: 8px 20px;
     background: rgba(15, 17, 21, 0.5);
     backdrop-filter: blur(10px);

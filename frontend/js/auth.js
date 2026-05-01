@@ -30,10 +30,8 @@ export function initAuth(onLoginCallback, onLogoutCallback) {
             window.currentUserUid = null;
             window.currentUserDisplayName = null;
             
-            const userInfo = document.getElementById('user-info');
             const profileLink = document.getElementById('profile-link');
             
-            if (userInfo) userInfo.innerText = '';
             if (loginBtn) loginBtn.style.display = 'inline-block';
             if (profileLink) profileLink.style.display = 'none';
             if (authWarning) authWarning.style.display = 'block';
@@ -51,7 +49,7 @@ function showDisplayNameModal(user, onLoginCallback) {
         modal.innerHTML = `
             <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 1000; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
                 <div style="background: var(--card-bg); padding: 40px; border-radius: 16px; text-align: center; max-width: 400px; width: 90%; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
-                    <h2 style="margin-top: 0; margin-bottom: 10px;">Welcome to V2!</h2>
+                    <h2 style="margin-top: 0; margin-bottom: 10px;">Welcome to Anime Ranker!</h2>
                     <p style="color: var(--text-muted); margin-bottom: 24px;">Please choose a unique display name.</p>
                     <input type="text" id="display-name-input" placeholder="Display Name" style="padding: 14px; margin-bottom: 10px; width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.2); color: white; font-size: 1rem; box-sizing: border-box;">
                     <p id="display-name-error" style="color: #ef4444; display: none; margin-bottom: 16px; font-size: 0.9rem;"></p>
@@ -108,13 +106,11 @@ function completeLogin(user, displayName, onLoginCallback) {
     window.currentUserUid = user.uid;
     window.currentUserDisplayName = displayName;
     
-    const userInfo = document.getElementById('user-info');
     const loginBtn = document.getElementById('login-btn');
     const profileLink = document.getElementById('profile-link');
     const profilePic = document.getElementById('profile-pic');
     const authWarning = document.getElementById('auth-warning');
 
-    if (userInfo) userInfo.innerText = `Welcome, ${displayName}!`;
     if (loginBtn) loginBtn.style.display = 'none';
     
     if (profileLink && profilePic) {

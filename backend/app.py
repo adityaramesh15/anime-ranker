@@ -126,5 +126,18 @@ def set_display_name():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/stats', methods=['GET'])
+def get_stats():
+    uid = request.args.get('uid')
+    if not uid:
+        return jsonify({"error": "Missing User ID"}), 400
+    try:
+        stats = ranker.get_stats(uid)
+        return jsonify(stats), 200
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)
