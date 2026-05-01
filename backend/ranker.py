@@ -16,6 +16,13 @@ class AnimeRanker:
 
         self.user_caches = TTLCache(maxsize=250, ttl=3600)
 
+    def _find_cached_anime(self, anime_list, anime_id):
+        anime_id_str = str(anime_id)
+        for anime in anime_list:
+            if str(anime.get("id")) == anime_id_str:
+                return anime
+        return None
+
     def _refresh_global_cache_if_needed(self):
         current_time = time.time()
         if (
@@ -324,10 +331,11 @@ class AnimeRanker:
             .document(str(anime_b_id))
         )
 
-        g_a = global_a_ref.get().to_dict()
-        g_b = global_b_ref.get().to_dict()
-        p_a = pers_a_ref.get().to_dict()
-        p_b = pers_b_ref.get().to_dict()
+        g_a = self._find_cached_anime(self.global_cache, anime_a_id) or global_a_ref.get().to_dict()
+        g_b = self._find_cached_anime(self.global_cache, anime_b_id) or global_b_ref.get().to_dict()
+        user_cache = self.user_caches.get(uid, [])
+        p_a = self._find_cached_anime(user_cache, anime_a_id) or pers_a_ref.get().to_dict()
+        p_b = self._find_cached_anime(user_cache, anime_b_id) or pers_b_ref.get().to_dict()
 
         def calc_new_elo(ra, rb, outcome_val):
             ea = 1 / (1 + math.pow(10, (rb - ra) / 400))

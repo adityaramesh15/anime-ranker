@@ -15,8 +15,26 @@ export function initAuth(onLoginCallback, onLogoutCallback) {
     onAuthStateChanged(auth, async (user) => {
         if (user) {
             try {
-                const res = await fetch(`${API_BASE}/user?uid=${user.uid}`);
-                const data = await res.json();
+                const cacheKey = `user_profile_${user.uid}`;
+                const cachedRaw = sessionStorage.getItem(cacheKey);
+                let data = null;
+
+                if (cachedRaw) {
+                    const cached = JSON.parse(cachedRaw);
+                    const isFresh = Date.now() - cached.cached_at < (10 * 60 * 1000);
+                    if (isFresh) {
+                        data = cached.data;
+                    }
+                }
+
+                if (!data) {
+                    const res = await fetch(`${API_BASE}/user?uid=${user.uid}`);
+                    data = await res.json();
+                    sessionStorage.setItem(cacheKey, JSON.stringify({
+                        cached_at: Date.now(),
+                        data
+                    }));
+                }
                 
                 if (!data.exists || !data.user.display_name) {
                     showDisplayNameModal(user, onLoginCallback);
@@ -43,6 +61,9 @@ export function initAuth(onLoginCallback, onLogoutCallback) {
 
 export function logoutUser() {
     signOut(auth).then(() => {
+        if (window.currentUserUid) {
+            sessionStorage.removeItem(`user_profile_${window.currentUserUid}`);
+        }
         window.location.href = 'index.html';
     }).catch((error) => {
         console.error("Sign out error", error);
@@ -91,6 +112,7 @@ export function showDisplayNameModal(user, onLoginCallback) {
                 const resData = await response.json();
                 
                 if (response.ok) {
+                    sessionStorage.removeItem(`user_profile_${user.uid}`);
                     modal.style.display = 'none';
                     completeLogin(user, name, onLoginCallback);
                 } else {
