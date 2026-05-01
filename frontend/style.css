@@ -376,6 +376,105 @@ button:active {
     vertical-align: middle;
 }
 
+.compare-section {
+    max-width: 900px;
+    margin: 8px auto 0;
+}
+
+.compare-search-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.compare-name-input {
+    min-width: 240px;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text-color);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.compare-name-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.compare-status {
+    color: var(--text-muted);
+    margin: 8px 0 10px;
+}
+
+.compare-blurb {
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+    color: #c7d2fe;
+}
+
+.compare-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.compare-column {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 10px;
+    text-align: left;
+}
+
+.compare-column h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: #a5b4fc;
+}
+
+.compare-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.compare-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    margin-bottom: 7px;
+}
+
+.compare-row .rank {
+    width: 36px;
+}
+
+.compare-row .title {
+    flex: 1;
+}
+
+.compare-row .score {
+    margin-left: 0;
+}
+
+.compare-empty {
+    color: var(--text-muted);
+    padding: 12px 8px;
+}
+
 /* =========================================
    7. ACCOUNT DASHBOARD
 ========================================= */
@@ -576,6 +675,15 @@ button:active {
         padding: 18px 20px;
         font-size: 0.95rem;
         margin: 16px auto;
+    }
+
+    .compare-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .compare-name-input {
+        min-width: 0;
+        width: 100%;
     }
 }
 

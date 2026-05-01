@@ -114,13 +114,7 @@ class AnimeRanker:
             key=lambda x: (x.get("matches_played", 0) == 0, -x.get("elo_score", 1200))
         )
 
-        watched_personal_shows = [anime for anime in self.user_caches[uid] if not anime.get("ignored", False)]
-        
-        personal_sorted = sorted(
-            watched_personal_shows,
-            key=lambda x: x.get("elo_score", 1200),
-            reverse=True,
-        )
+        personal_sorted = self._get_watched_personal_sorted(uid)
 
         return {
             "global": global_sorted,
@@ -133,6 +127,94 @@ class AnimeRanker:
         if doc.exists:
             return doc.to_dict()
         return None
+
+    def _get_watched_personal_sorted(self, uid):
+        self._refresh_user_cache_if_needed(uid)
+        watched_shows = [
+            anime for anime in self.user_caches.get(uid, [])
+            if not anime.get("ignored", False)
+        ]
+        return sorted(
+            watched_shows,
+            key=lambda x: x.get("elo_score", 1200),
+            reverse=True,
+        )
+
+    def _compute_alignment_percentage(self, personal_sorted):
+        self._refresh_global_cache_if_needed()
+        global_sorted = sorted(
+            self.global_cache,
+            key=lambda x: (x.get("matches_played", 0) == 0, -x.get("elo_score", 1200))
+        )
+        global_top_10_ids = {str(a["id"]) for a in global_sorted[:10]}
+        personal_top_10_ids = {str(a["id"]) for a in personal_sorted[:10]}
+        intersection = global_top_10_ids.intersection(personal_top_10_ids)
+        return round((len(intersection) / 10) * 100, 1)
+
+    def compare_users(self, user1_id, user2_display_name):
+        user2_display_name_lower = user2_display_name.lower().strip()
+        if not user2_display_name_lower:
+            raise ValueError("Missing comparison display name")
+
+        user1_doc = self.db.collection("users").document(user1_id).get()
+        if not user1_doc.exists:
+            raise ValueError("Current user not found")
+
+        user2_query = (
+            self.db.collection("users")
+            .where("display_name_lower", "==", user2_display_name_lower)
+            .limit(1)
+            .get()
+        )
+        if not user2_query:
+            raise ValueError("User not found")
+
+        user2_ref = user2_query[0]
+        user2_id = user2_ref.id
+
+        user1_display_name = user1_doc.to_dict().get("display_name", "You")
+        user2_display_name_value = user2_ref.to_dict().get("display_name", user2_display_name.strip())
+
+        user1_sorted = self._get_watched_personal_sorted(user1_id)
+        user2_sorted = self._get_watched_personal_sorted(user2_id)
+
+        user1_alignment = self._compute_alignment_percentage(user1_sorted)
+        user2_alignment = self._compute_alignment_percentage(user2_sorted)
+
+        user1_rank_map = {str(anime["id"]): idx + 1 for idx, anime in enumerate(user1_sorted)}
+        user2_rank_map = {str(anime["id"]): idx + 1 for idx, anime in enumerate(user2_sorted)}
+        user1_title_map = {str(anime["id"]): anime.get("title", "Unknown") for anime in user1_sorted}
+        user2_title_map = {str(anime["id"]): anime.get("title", "Unknown") for anime in user2_sorted}
+
+        common_ids = set(user1_rank_map.keys()).intersection(set(user2_rank_map.keys()))
+
+        compared_rows = []
+        for anime_id in common_ids:
+            compared_rows.append({
+                "id": int(anime_id),
+                "title": user1_title_map.get(anime_id, user2_title_map.get(anime_id, "Unknown")),
+                "user1_rank": user1_rank_map[anime_id],
+                "user2_rank": user2_rank_map[anime_id],
+                "rank_gap": abs(user1_rank_map[anime_id] - user2_rank_map[anime_id]),
+            })
+
+        compared_rows.sort(key=lambda row: (row["rank_gap"], row["user1_rank"], row["user2_rank"]))
+
+        return {
+            "user1": {
+                "id": user1_id,
+                "display_name": user1_display_name,
+                "alignment_percentage": user1_alignment,
+                "leaderboard": user1_sorted,
+            },
+            "user2": {
+                "id": user2_id,
+                "display_name": user2_display_name_value,
+                "alignment_percentage": user2_alignment,
+                "leaderboard": user2_sorted,
+            },
+            "shared_rankings": compared_rows,
+        }
 
     def set_display_name(self, uid, display_name):
         display_name_lower = display_name.lower().strip()
@@ -316,22 +398,15 @@ class AnimeRanker:
         total_matches = user_doc.get("total_matches", 0)
 
         self._refresh_global_cache_if_needed()
-        self._refresh_user_cache_if_needed(uid)
+        personal_sorted = self._get_watched_personal_sorted(uid)
 
         total_global = len(self.global_cache)
-        watched_shows = [anime for anime in self.user_caches.get(uid, []) if not anime.get("ignored", False)]
+        watched_shows = personal_sorted
         watched_count = len(watched_shows)
 
         completion_percentage = (watched_count / total_global * 100) if total_global > 0 else 0
 
-        global_sorted = sorted(self.global_cache, key=lambda x: (x.get("matches_played", 0) == 0, -x.get("elo_score", 1200)))
-        global_top_10_ids = {str(a["id"]) for a in global_sorted[:10]}
-
-        personal_sorted = sorted(watched_shows, key=lambda x: x.get("elo_score", 1200), reverse=True)
-        personal_top_10_ids = {str(a["id"]) for a in personal_sorted[:10]}
-
-        intersection = global_top_10_ids.intersection(personal_top_10_ids)
-        alignment_percentage = (len(intersection) / 10) * 100
+        alignment_percentage = self._compute_alignment_percentage(personal_sorted)
 
         biggest_positive = {"title": "N/A", "diff": 0}
         biggest_negative = {"title": "N/A", "diff": 0}

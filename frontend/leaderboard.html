@@ -19,7 +19,7 @@
         <a href="leaderboard.html">Leaderboard</a>
         <a href="watchlist.html">Watchlist</a>
         
-        <button id="login-btn">Login with Google</button>
+        <button id="login-btn" style="padding: 5px 10px; font-size: 0.9rem;">Login with Google</button>
         <a href="account.html" id="profile-link" style="display: none; margin-left: 15px; vertical-align: middle;">
             <img id="profile-pic" src="" referrerpolicy="no-referrer" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--primary-color); object-fit: cover;">
         </a>
@@ -35,6 +35,7 @@
                 <div class="controls">
                     <button onclick="showList('personal')" id="btn-personal" class="active-toggle">Personal</button>
                     <button onclick="showList('global')" id="btn-global">Global</button>
+                    <button onclick="showList('compare')" id="btn-compare">Compare</button>
                     <button onclick="exportTop10()" id="btn-export" class="export-btn">Copy Top 10</button>
                 </div>
             </div>
@@ -42,6 +43,15 @@
             <div id="loading">Fetching live scores...</div>
             
             <ol class="leaderboard-list" id="leaderboard-list"></ol>
+            <div id="compare-section" class="compare-section" style="display: none;">
+                <div class="compare-search-row">
+                    <input id="compare-name-input" class="compare-name-input" type="text" placeholder="Type display name..." />
+                    <button onclick="runCompare()" id="compare-run-btn">Submit</button>
+                </div>
+                <p id="compare-status" class="compare-status"></p>
+                <div id="compare-blurb" class="compare-blurb"></div>
+                <div id="compare-columns" class="compare-columns"></div>
+            </div>
         </div>
     </div>
 
@@ -51,6 +61,7 @@
 
         let globalData = [];
         let personalData = [];
+        let currentLeaderboardView = 'personal';
 
         initAuth(
             (user) => {
@@ -84,14 +95,30 @@
         };
 
         window.showList = function(type) {
+            currentLeaderboardView = type;
             const listEl = document.getElementById('leaderboard-list');
-            listEl.innerHTML = ''; // Clear current list
+            const compareSection = document.getElementById('compare-section');
+            listEl.innerHTML = '';
             
+            if (type === 'compare') {
+                listEl.style.display = 'none';
+                compareSection.style.display = 'block';
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('btn-export').style.display = 'none';
+                document.getElementById('btn-personal').classList.toggle('active-toggle', false);
+                document.getElementById('btn-global').classList.toggle('active-toggle', false);
+                document.getElementById('btn-compare').classList.toggle('active-toggle', true);
+                return;
+            }
+
             const dataToShow = type === 'personal' ? personalData : globalData;
+            listEl.style.display = 'block';
+            compareSection.style.display = 'none';
 
             // Update button styles using the CSS class
             document.getElementById('btn-personal').classList.toggle('active-toggle', type === 'personal');
             document.getElementById('btn-global').classList.toggle('active-toggle', type === 'global');
+            document.getElementById('btn-compare').classList.toggle('active-toggle', false);
             
             // Hide export button when viewing Global Rankings
             document.getElementById('btn-export').style.display = type === 'personal' ? 'inline-flex' : 'none';
@@ -115,6 +142,82 @@
                 listEl.appendChild(li);
             });
         };
+
+
+        function renderCompareColumn(title, data) {
+            const top20 = (data || []).slice(0, 20);
+            const items = top20.map((anime, index) => `
+                <li class="compare-row">
+                    <span class="rank">#${index + 1}</span>
+                    <span class="title">${anime.title}</span>
+                    <span class="score">${anime.elo_score} Elo</span>
+                </li>
+            `).join('');
+
+            return `
+                <div class="compare-column">
+                    <h3>${title}</h3>
+                    <ol class="compare-list">
+                        ${items || '<li class="compare-empty">No ranked shows yet.</li>'}
+                    </ol>
+                </div>
+            `;
+        }
+
+        window.runCompare = async function() {
+            if (!window.currentUserUid) return;
+
+            const statusEl = document.getElementById('compare-status');
+            const blurbEl = document.getElementById('compare-blurb');
+            const columnsEl = document.getElementById('compare-columns');
+            const nameInput = document.getElementById('compare-name-input');
+            const rawName = nameInput.value.trim();
+
+            if (!rawName) {
+                statusEl.textContent = 'Enter a display name to compare.';
+                blurbEl.innerHTML = '';
+                columnsEl.innerHTML = '';
+                return;
+            }
+
+            // statusEl.textContent = 'Comparing...';
+            blurbEl.innerHTML = '';
+            columnsEl.innerHTML = '';
+
+            try {
+                const params = new URLSearchParams({
+                    user1_id: window.currentUserUid,
+                    user2_display_name: rawName
+                });
+                const response = await fetch(`${API_BASE}/compare?${params.toString()}`);
+                const payload = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(payload.error || 'Could not compare users.');
+                }
+
+                // statusEl.textContent = `Compared ${payload.user1.display_name} vs ${payload.user2.display_name}`;
+                blurbEl.textContent = `Global Top 10 Alignment: ${payload.user1.display_name} at ${payload.user1.alignment_percentage}%, ${payload.user2.display_name} at ${payload.user2.alignment_percentage}%.`;
+
+                columnsEl.innerHTML = `
+                    ${renderCompareColumn(payload.user1.display_name, payload.user1.leaderboard)}
+                    ${renderCompareColumn(payload.user2.display_name, payload.user2.leaderboard)}
+                `;
+            } catch (error) {
+                statusEl.textContent = error.message || 'Comparison failed.';
+                blurbEl.innerHTML = '';
+                columnsEl.innerHTML = '';
+            }
+        };
+
+        document.addEventListener('keydown', (event) => {
+            if (currentLeaderboardView === 'compare' && event.key === 'Enter') {
+                const activeEl = document.activeElement;
+                if (activeEl && activeEl.id === 'compare-name-input') {
+                    window.runCompare();
+                }
+            }
+        });
 
         window.exportTop10 = async function() {
             if (!personalData || personalData.length === 0) {

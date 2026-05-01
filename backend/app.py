@@ -167,5 +167,21 @@ def toggle_favorite():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/compare', methods=['GET'])
+def compare_users():
+    user1_id = request.args.get('user1_id')
+    user2_display_name = request.args.get('user2_display_name')
+
+    if not user1_id or not user2_display_name:
+        return jsonify({"error": "Missing parameters"}), 400
+
+    try:
+        result = ranker.compare_users(user1_id, user2_display_name)
+        return jsonify(result), 200
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)

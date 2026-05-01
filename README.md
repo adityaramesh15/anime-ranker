@@ -1,117 +1,147 @@
 # Anime Ranker
 
-A full-stack, serverless web application that allows users to rank the top 200 anime franchises through head-to-head, Elo-based matchups. Features secure Google Sign-in to track both personal tier lists, a community-driven global leaderboard, and a personalized watchlist for managing unseen shows. Try it out [here!](https://show-ranker-project.web.app/)
+Anime Ranker is a full-stack web app where users rank anime through head-to-head Elo matchups, track personal lists, compare against global sentiment, and manage a watchlist.  
+Live app: [show-ranker-project.web.app](https://show-ranker-project.web.app/)
 
-## Architecture & Tech Stack
-* **Frontend:** HTML, CSS, JavaScript (Vanilla) hosted on **Firebase Hosting**.
-* **Authentication:** **Firebase Auth** (Google Sign-In) for personalized ranking profiles.
-* **Backend:** Python and Flask, containerized and deployed on **Google Cloud Run**.
-* **Database:** **Google Firestore** (NoSQL) for durable Elo score tracking.
-* **Data Pipeline:** Python scripts that fetch, clean, and consolidate franchise data from the **AniList GraphQL API**.
+## Current Features (V2)
+
+- Elo-based matchup voting (`Choose This`, `Tie`, `Seen Neither`, `Haven't seen this`)
+- Personal and Global leaderboards
+- Compare view in leaderboard (`Personal`, `Global`, `Compare`) for user-to-user side-by-side ranking checks
+- Watchlist improvements:
+  - Favorite toggle per show
+  - Favorites filter toggle
+  - Sort toggle (`Alphabetical` / `Global Elo Rank`)
+  - Watchlist local cache in browser storage to reduce repeated reads
+  - Direct AniList links from each card
+- Account page with:
+  - Google profile picture
+  - Editable `display_name` (used for comparisons)
+  - Stats (total matches, completion %, top-10 alignment %, biggest positive/negative divergence)
+  - Sign out
+  - Personal Elo reset action
+- Copy-to-clipboard export of personal Top 10
+- Google Analytics (`gtag`) integrated across app pages
+- Expanded catalog and image optimization (cover images served as `.webp`)
+
+## Tech Stack
+
+- **Frontend:** HTML, CSS, Vanilla JavaScript (ES Modules), hosted on Firebase Hosting
+- **Backend:** Python + Flask API, deployed to Google Cloud Run
+- **Auth:** Firebase Authentication (Google Sign-in)
+- **Database:** Firestore (Firebase Admin SDK)
+- **Data prep:** Python scripts + AniList GraphQL source data
+
+## Firestore Schema
+
+```json
+{
+  "global_anime": {
+    "__fields__": ["matches_played", "id", "elo_score", "title"]
+  },
+  "users": {
+    "__fields__": ["display_name", "display_name_lower", "total_matches"],
+    "personal_anime": {
+      "__fields__": ["id", "ignored", "favorite", "elo_score", "title"]
+    }
+  }
+}
+```
 
 ## Project Structure
 
 ```text
 show-ranker/
-├── backend/                    # Google Cloud Run Flask Server
-│   ├── app.py                  # API Routing and endpoint logic
-│   ├── ranker.py               # Business logic, Elo math, and DB caching
-│   ├── Dockerfile              # Container configuration
-│   └── requirements.txt        # Python dependencies
-├── data/                       # Local data pipeline
+├── backend/
+│   ├── app.py
+│   ├── ranker.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── data/
 │   ├── datasets/
-│   │   ├── raw_anime_data.json
-│   │   └── clean_anime_list.json
-│   ├── clean_data.py           # Consolidates seasons/spinoffs into franchises
-│   ├── ingest_data.py          # Fetches Top 200 from AniList GraphQL
-│   └── upload_to_firestore.py  # One-time script to populate the live database
-├── frontend/                   # Firebase Hosting Static Assets
-│   ├── images/                 # 200 downloaded cover images ({id}.jpg)
-│   ├── 404.html                # Custom error page
-│   ├── index.html              # The Matchup voting UI (with Auth)
-│   ├── leaderboard.html        # The Global & Personal Leaderboard UI
-│   ├── style.css               # Core styling
-│   └── watchlist.html          # UI for managing ignored/unseen shows
-├── .firebaserc                 # Firebase project target
-├── firebase.json               # Firebase deployment rules
-├── .gitignore
-├── README.md
-└── requirements.txt 
+│   ├── clean_data.py
+│   ├── ingest_data.py
+│   └── upload_to_firestore.py
+├── frontend/
+│   ├── js/
+│   │   ├── api.js
+│   │   ├── auth.js
+│   │   └── firebase-config.js
+│   ├── images/                 # .webp cover images
+│   ├── 404.html
+│   ├── index.html
+│   ├── leaderboard.html
+│   ├── watchlist.html
+│   ├── account.html
+│   └── style.css
+├── firebase.json
+├── .firebaserc
+└── README.md
 ```
 
-## DB Structure
-``` json
-{
-    "global_anime": {
-        "__fields__": [
-            "matches_played",
-            "id",
-            "elo_score",
-            "title"
-        ]
-    },
-    "users": {
-        "__fields__": [
-            "display_name",
-            "display_name_lower",
-            "total_matches"
-        ],
-        "personal_anime": {
-            "__fields__": [
-                "id",
-                "ignored",
-                "elo_score",
-                "title"
-            ]
-        }
-    }
-}
-```
+## How It Works
 
-## How it Works (The Elo System, Auth & Caching)
-To optimize database reads and stay well within GCP Free Tier limits, the backend utilizes a dual-layer in-memory caching system using standard arrays and `cachetools`.
+To stay within Firestore free-tier limits, the backend and frontend both reduce unnecessary reads/writes:
 
-1. **Initialization:** When a user logs in for the first time, a baseline copy of the Top 200 shows (starting at 1200 Elo) is created in their personal Firestore sub-collection.
-2. **Matchmaking (0 Reads):** Matchups are generated entirely from memory by comparing adjacent scores in the user's specific `TTLCache`.
-3. **Processing (Atomic Writes):** When a user votes, the server fetches the two specific shows from the database. It calculates the new expected outcomes using standard Elo math (K-factor = 32) for *both* the Global baseline and the User's personal baseline.
-4. **Batch Updates:** The updated Global and Personal scores are written back to Firestore simultaneously using a `db.batch()` operation to ensure data integrity.
-5. **Memory Patching:** The local memory caches are instantly patched with the new scores, avoiding the need for a full database re-fetch on the next request.
-6. **Watchlist Management:** Shows marked as unwatched are dynamically filtered out of the matchmaking pool and stored in a personalized watchlist, where they can be added back later once watched.
+1. Backend caches global and per-user ranking data in memory (`cachetools.TTLCache` for user caches).
+2. Matchups are generated from cache, not by querying Firestore for each request.
+3. Vote processing writes global + personal updates in a Firestore batch.
+4. Watchlist UI uses browser storage caching so page-to-page navigation does not always hit Firestore.
+5. Display name lookups for compare use bounded queries (`limit(1)`).
 
-## Local Development Setup
+## API Endpoints (High Level)
 
-### 1. Backend
+- `GET /api/matchup`
+- `POST /api/vote`
+- `GET /api/leaderboard`
+- `POST /api/ignore`
+- `GET /api/watchlist`
+- `POST /api/unignore`
+- `POST /api/favorite`
+- `GET /api/user`
+- `POST /api/user/display_name`
+- `GET /api/stats`
+- `POST /api/reset_account`
+- `GET /api/compare`
+
+## Local Development
+
+### 1) Run backend
+
 ```bash
-# Navigate to backend
 cd backend
-
-# Create and activate virtual environment
 python3 -m venv .venv
-source .venv/bin/activate  # or .venv\Scripts\activate on Windows
-
-# Install dependencies
+source .venv/bin/activate
 pip install -r requirements.txt
-
-# Run the local Flask server
-python app.py
+python3 app.py
 ```
-*(Note: You will need a `firebase_credentials.json` service account key in the `backend` folder for local database access).*
 
-### 2. Frontend
-Since the frontend uses standard web APIs, simply open `frontend/index.html` in your web browser. 
-* Ensure the `API_BASE` variable in the JavaScript points to `http://127.0.0.1:8080/api` for local testing.
-* **Important:** You must paste your project's `firebaseConfig` object from the Firebase Console into the `<script type="module">` blocks of the HTML files for Authentication to work locally.
+Local backend uses `backend/firebase_credentials.json` (service account key).
+
+### 2) Run frontend (required for local Google Auth)
+
+```bash
+firebase serve --only hosting
+```
+
+Use the localhost URL shown by Firebase CLI (commonly `http://localhost:5002`).  
+Do not open raw HTML files directly for auth testing.
 
 ## Deployment
 
-**Deploy the Backend (Cloud Run):**
+### Backend (Cloud Run)
+
 ```bash
 cd backend
 gcloud run deploy anime-ranker-backend --source . --region us-central1 --allow-unauthenticated
 ```
 
-**Deploy the Frontend (Firebase Hosting):**
-The frontend code is configured to automatically detect if it is running locally or in the cloud. Simply run:
+### Frontend (Firebase Hosting)
+
 ```bash
 firebase deploy --only hosting
 ```
+
+## Additional Notes
+
+- Technical, implementation-level change history for V2 is documented in `RELEASE_NOTES_V2.md`.
