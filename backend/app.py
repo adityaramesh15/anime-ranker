@@ -151,5 +151,21 @@ def reset_account():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/favorite', methods=['POST'])
+def toggle_favorite():
+    data = request.json
+    uid = data.get("uid")
+    anime_id = data.get("anime_id")
+    favorite_status = data.get("favorite")
+    
+    if not uid or not anime_id or favorite_status is None:
+        return jsonify({"error": "Missing parameters"}), 400
+        
+    try:
+        response = ranker.toggle_favorite(uid, anime_id, favorite_status)
+        return jsonify(response), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)

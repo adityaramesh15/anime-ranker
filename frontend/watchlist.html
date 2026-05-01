@@ -89,6 +89,33 @@
             transform: translateY(1px);
         }
 
+        .watchlist-card .favorite-toggle-btn {
+            display: block;
+            margin: 8px auto 0;
+            padding: 6px 10px;
+            font-size: 0.75rem;
+            border-radius: 999px;
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            border: 1px solid rgba(239, 68, 68, 0.45);
+            box-shadow: none;
+            min-width: 92px;
+        }
+
+        .watchlist-card .favorite-toggle-btn:hover {
+            background: rgba(239, 68, 68, 0.28);
+            color: #fecaca;
+            border-color: rgba(248, 113, 113, 0.65);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 14px rgba(239, 68, 68, 0.25);
+        }
+
+        .watchlist-card .favorite-toggle-btn.active {
+            background: #ef4444;
+            color: #fff;
+            border-color: #ef4444;
+        }
+
         .watchlist-card.removing {
             opacity: 0;
             transform: scale(0.9) translateY(10px);
@@ -148,11 +175,16 @@
     </nav>
 
     <h1>My Watchlist</h1>
-    <p class="subtitle" id="watchlist-subtitle" style="display: none;">Shows you marked as unwatched. Add them back to your ranking pool once you've seen them!</p>
-
     <div id="auth-warning" class="auth-warning-box">Please log in!</div>
     <div id="loading" style="display: none;">Fetching watchlist...</div>
-    <div id="show-count" class="show-count" style="display: none;"></div>
+    
+    <div class="controls-wrapper" id="watchlist-controls" style="display: none; max-width: 1100px; margin: 0 auto 20px auto; padding: 0 20px; justify-content: center; align-items: center; flex-direction: column; gap: 10px;">
+        <div id="show-count" class="show-count" style="margin: 0; text-align: center;"></div>
+        <div class="controls">
+            <button id="filter-favorites-btn" class="secondary-btn" onclick="toggleFavoritesFilter()" style="margin-right: 10px;">Show All</button>
+            <button id="sort-toggle-btn" class="secondary-btn" onclick="toggleSortMode()">Sort: Alphabetical</button>
+        </div>
+    </div>
     
     <div class="watchlist-grid" id="watchlist-grid"></div>
 
@@ -160,100 +192,167 @@
         import { initAuth } from './js/auth.js';
         import { API_BASE } from './js/api.js';
 
-        let watchlistCount = 0;
+        let watchlistData = [];
+        let favoritesOnly = false;
+        let sortMode = 'alpha';
 
         initAuth(
             (user) => {
-                document.getElementById('watchlist-subtitle').style.display = 'block';
                 window.fetchWatchlist();
             },
             () => {
                 document.getElementById('watchlist-grid').innerHTML = '';
-                document.getElementById('show-count').style.display = 'none';
-                document.getElementById('watchlist-subtitle').style.display = 'none';
+                document.getElementById('watchlist-controls').style.display = 'none';
             }
         );
 
         window.fetchWatchlist = async function() {
             if (!window.currentUserUid) return;
             document.getElementById('loading').style.display = 'block';
-            document.getElementById('show-count').style.display = 'none';
+            document.getElementById('watchlist-controls').style.display = 'none';
+            document.getElementById('watchlist-grid').innerHTML = '';
 
-            try {
-                const response = await fetch(`${API_BASE}/watchlist?uid=${window.currentUserUid}`);
-                const data = await response.json();
-                
-                const grid = document.getElementById('watchlist-grid');
-                grid.innerHTML = '';
+            const cacheKey = `watchlist_${window.currentUserUid}`;
+            const cachedData = localStorage.getItem(cacheKey);
+
+            if (cachedData) {
+                watchlistData = JSON.parse(cachedData);
                 document.getElementById('loading').style.display = 'none';
-
-                watchlistCount = data.length;
-
-                if (data.length === 0) {
-                    grid.innerHTML = `
-                        <div class="empty-state" style="grid-column: 1 / -1;">
-                            <span class="empty-icon">🎉</span>
-                            <p>Your watchlist is empty!</p>
-                            <p>Shows you mark as "Haven't seen this" during matchups will appear here.</p>
-                        </div>
-                    `;
-                    return;
+                window.applySortAndFilter();
+            } else {
+                try {
+                    const response = await fetch(`${API_BASE}/watchlist?uid=${window.currentUserUid}`);
+                    watchlistData = await response.json();
+                    localStorage.setItem(cacheKey, JSON.stringify(watchlistData));
+                    
+                    document.getElementById('loading').style.display = 'none';
+                    window.applySortAndFilter();
+                } catch (error) {
+                    console.error("Error fetching watchlist:", error);
+                    document.getElementById('loading').innerText = "Error loading watchlist.";
                 }
-
-                window.updateShowCount();
-
-                data.forEach(anime => {
-                    const card = document.createElement('div');
-                    card.className = 'watchlist-card';
-                    card.id = `card-${anime.id}`;
-                    card.innerHTML = `
-                        <img src="images/${anime.id}.webp" alt="${anime.title}">
-                        <h3><a href="https://anilist.co/anime/${anime.id}" target="_blank" class="anilist-link">${anime.title}</a></h3>
-                        <button class="add-back-btn" onclick="unignoreAnime(${anime.id})">I've watched it!</button>
-                    `;
-                    grid.appendChild(card);
-                });
-            } catch (error) {
-                console.error("Error fetching watchlist:", error);
-                document.getElementById('loading').innerText = "Error loading watchlist.";
             }
         };
 
-        window.updateShowCount = function() {
+        window.applySortAndFilter = function() {
+            let filteredData = [...watchlistData];
+            
+            if (favoritesOnly) {
+                filteredData = filteredData.filter(anime => anime.favorite);
+            }
+
+            if (sortMode === 'global_elo') {
+                filteredData.sort((a, b) => b.global_elo - a.global_elo);
+            } else {
+                filteredData.sort((a, b) => a.title.localeCompare(b.title));
+            }
+
+            window.renderGrid(filteredData);
+        };
+
+        window.renderGrid = function(data) {
+            const grid = document.getElementById('watchlist-grid');
+            grid.innerHTML = '';
+            
+            if (watchlistData.length === 0) {
+                document.getElementById('watchlist-controls').style.display = 'none';
+                grid.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1;">
+                        <span class="empty-icon">🎉</span>
+                        <p>Your watchlist is empty!</p>
+                        <p>Shows you mark as "Haven't seen this" during matchups will appear here.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            document.getElementById('watchlist-controls').style.display = 'flex';
+            
             const countEl = document.getElementById('show-count');
-            countEl.style.display = 'block';
-            countEl.innerHTML = `<span>${watchlistCount}</span> show${watchlistCount !== 1 ? 's' : ''} on your watchlist`;
+            countEl.innerHTML = `<span>${data.length}</span> show${data.length !== 1 ? 's' : ''}`;
+
+            if (data.length === 0 && favoritesOnly) {
+                 grid.innerHTML = `
+                    <div class="empty-state" style="grid-column: 1 / -1;">
+                        <span class="empty-icon">♡</span>
+                        <p>No favorites found!</p>
+                    </div>
+                `;
+                return;
+            }
+
+            data.forEach(anime => {
+                const card = document.createElement('div');
+                card.className = 'watchlist-card';
+                card.id = `card-${anime.id}`;
+                const favoriteClass = anime.favorite ? 'active' : '';
+                const favoriteLabel = anime.favorite ? 'Favorited' : 'Favorite';
+
+                card.innerHTML = `
+                    <img src="images/${anime.id}.webp" alt="${anime.title}">
+                    <h3><a href="https://anilist.co/anime/${anime.id}" target="_blank" class="anilist-link">${anime.title}</a></h3>
+                    <button class="add-back-btn" onclick="unignoreAnime(${anime.id})">I've watched it!</button>
+                    <button class="favorite-toggle-btn ${favoriteClass}" onclick="toggleFavorite(${anime.id}, ${!anime.favorite})">${favoriteLabel}</button>
+                `;
+                grid.appendChild(card);
+            });
+        };
+
+        window.toggleFavoritesFilter = function() {
+            favoritesOnly = !favoritesOnly;
+            const btn = document.getElementById('filter-favorites-btn');
+            btn.innerText = favoritesOnly ? "Favorites Only" : "Show All";
+            btn.classList.toggle('active-toggle', favoritesOnly);
+            window.applySortAndFilter();
+        };
+
+        window.toggleSortMode = function() {
+            sortMode = sortMode === 'alpha' ? 'global_elo' : 'alpha';
+            const btn = document.getElementById('sort-toggle-btn');
+            btn.innerText = sortMode === 'global_elo' ? "Sort: Global Elo Rank" : "Sort: Alphabetical";
+            btn.classList.toggle('active-toggle', sortMode === 'global_elo');
+            window.applySortAndFilter();
+        };
+
+        window.toggleFavorite = async function(animeId, newStatus) {
+            if (!window.currentUserUid) return;
+
+            const anime = watchlistData.find(a => a.id === animeId);
+            if (anime) anime.favorite = newStatus;
+
+            const cacheKey = `watchlist_${window.currentUserUid}`;
+            localStorage.setItem(cacheKey, JSON.stringify(watchlistData));
+
+            window.applySortAndFilter();
+
+            try {
+                await fetch(`${API_BASE}/favorite`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        uid: window.currentUserUid,
+                        anime_id: animeId,
+                        favorite: newStatus
+                    })
+                });
+            } catch (error) {
+                console.error("Error toggling favorite:", error);
+            }
         };
 
         window.unignoreAnime = async function(animeId) {
             if (!window.currentUserUid) return;
             
-            // Animate out, then remove
             const card = document.getElementById(`card-${animeId}`);
-            if (card) {
-                card.classList.add('removing');
-            }
+            if (card) card.classList.add('removing');
 
-            watchlistCount--;
+            watchlistData = watchlistData.filter(a => a.id !== animeId);
+            
+            const cacheKey = `watchlist_${window.currentUserUid}`;
+            localStorage.setItem(cacheKey, JSON.stringify(watchlistData));
 
-            // Wait for animation, then remove from DOM
             setTimeout(() => {
-                if (card) card.remove();
-
-                // Check if grid is now empty
-                const grid = document.getElementById('watchlist-grid');
-                if (grid.children.length === 0) {
-                    grid.innerHTML = `
-                        <div class="empty-state" style="grid-column: 1 / -1;">
-                            <span class="empty-icon">🎉</span>
-                            <p>Your watchlist is empty!</p>
-                            <p>Shows you mark as "Haven't seen this" during matchups will appear here.</p>
-                        </div>
-                    `;
-                    document.getElementById('show-count').style.display = 'none';
-                } else {
-                    window.updateShowCount();
-                }
+                window.applySortAndFilter();
             }, 400);
 
             try {
@@ -264,8 +363,7 @@
                 });
             } catch (error) {
                 console.error("Error un-ignoring:", error);
-                alert("Failed to move back to pool. Please refresh.");
-                window.fetchWatchlist(); // Re-fetch to restore correct state
+                localStorage.removeItem(cacheKey); // Wipe cache if error
             }
         };
     </script>

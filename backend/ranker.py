@@ -185,8 +185,17 @@ class AnimeRanker:
     
     def get_watchlist(self, uid):
         self._refresh_user_cache_if_needed(uid)
+        self._refresh_global_cache_if_needed()
         
-        watchlist = [anime for anime in self.user_caches.get(uid, []) if anime.get("ignored", False)]
+        global_dict = {str(a["id"]): a.get("elo_score", 1200) for a in self.global_cache}
+        
+        watchlist = []
+        for anime in self.user_caches.get(uid, []):
+            if anime.get("ignored", False):
+                anime_copy = anime.copy()
+                anime_copy["global_elo"] = global_dict.get(str(anime["id"]), 1200)
+                watchlist.append(anime_copy)
+                
         return sorted(watchlist, key=lambda x: x['title'])
 
     def unignore_show(self, uid, anime_id):
@@ -369,4 +378,23 @@ class AnimeRanker:
                 anime["elo_score"] = 1200
                 anime["ignored"] = False
                 
+        return {"status": "success"}
+
+    def toggle_favorite(self, uid, anime_id, favorite_status):
+        self._refresh_user_cache_if_needed(uid)
+        
+        doc_ref = (
+            self.db.collection("users")
+            .document(uid)
+            .collection("personal_anime")
+            .document(str(anime_id))
+        )
+        
+        doc_ref.update({"favorite": favorite_status})
+        
+        if uid in self.user_caches:
+            for anime in self.user_caches[uid]:
+                if str(anime["id"]) == str(anime_id):
+                    anime["favorite"] = favorite_status
+                    
         return {"status": "success"}

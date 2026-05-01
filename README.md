@@ -40,7 +40,7 @@ show-ranker/
 ```
 
 ## DB Structure
-```
+``` json
 {
     "global_anime": {
         "__fields__": [
@@ -53,6 +53,7 @@ show-ranker/
     "users": {
         "__fields__": [
             "display_name",
+            "display_name_lower",
             "total_matches"
         ],
         "personal_anime": {

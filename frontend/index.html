@@ -151,6 +151,8 @@
                     })
                 });
                 
+                localStorage.removeItem(`watchlist_${window.currentUserUid}`);
+
                 // Fetch a new matchup immediately
                 window.fetchMatchup(); 
             } catch (error) {
