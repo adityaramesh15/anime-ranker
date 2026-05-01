@@ -97,5 +97,34 @@ def unignore_show():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/user', methods=['GET'])
+def get_user():
+    uid = request.args.get('uid')
+    if not uid:
+        return jsonify({"error": "Missing User ID"}), 400
+    try:
+        user_doc = ranker.get_user(uid)
+        if not user_doc:
+            return jsonify({"exists": False}), 200
+        return jsonify({"exists": True, "user": user_doc}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/user/display_name', methods=['POST'])
+def set_display_name():
+    data = request.json
+    uid = data.get('uid')
+    display_name = data.get('display_name')
+    if not uid or not display_name:
+        return jsonify({"error": "Missing parameters"}), 400
+    
+    try:
+        result = ranker.set_display_name(uid, display_name)
+        return jsonify(result), 200
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)

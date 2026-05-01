@@ -21,13 +21,15 @@
         
         <span id="user-info"></span>
         <button id="login-btn">Login with Google</button>
-        <button id="logout-btn" style="display: none;">Logout</button>
+        <a href="account.html" id="profile-link" style="display: none; margin-left: 15px; vertical-align: middle;">
+            <img id="profile-pic" src="" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--primary-color); object-fit: cover;">
+        </a>
     </nav>
 
     <div class="page-container">
         <h1>Leaderboards</h1>
         
-        <div id="auth-warning" class="auth-warning-box">Please log in to view leaderboards!</div>
+        <div id="auth-warning" class="auth-warning-box">Please log in!</div>
 
         <div id="leaderboard-content" style="display: none;">
             <div class="controls-wrapper">
@@ -45,69 +47,25 @@
     </div>
 
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
+        import { initAuth } from './js/auth.js';
+        import { API_BASE } from './js/api.js';
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyBffsnhQmA8X_AIrhDF7wW6IYUMDH_szPk",
-            authDomain: "show-ranker-project.firebaseapp.com",
-            projectId: "show-ranker-project",
-            storageBucket: "show-ranker-project.firebasestorage.app",
-            messagingSenderId: "10037187822",
-            appId: "1:10037187822:web:5e36fbb62dabe0e2ac8fff",
-            measurementId: "G-675E716Y2L"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const provider = new GoogleAuthProvider();
-
-        const loginBtn = document.getElementById('login-btn');
-        const logoutBtn = document.getElementById('logout-btn');
-        const userInfo = document.getElementById('user-info');
-
-        loginBtn.addEventListener('click', () => {
-            signInWithPopup(auth, provider).catch(error => console.error("Login failed:", error));
-        });
-
-        logoutBtn.addEventListener('click', () => {
-            signOut(auth);
-        });
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // Update UI
-                const firstName = user.displayName ? user.displayName.split(' ')[0] : 'Guest';
-                userInfo.innerText = `Welcome, ${firstName}!`;
-                loginBtn.style.display = 'none';
-                logoutBtn.style.display = 'inline-block';
-                
-                // Show leaderboard
-                document.getElementById('auth-warning').style.display = 'none';
-                document.getElementById('leaderboard-content').style.display = 'block';
-                fetchLeaderboards(user.uid);
-            } else {
-                // Revert UI
-                userInfo.innerText = '';
-                loginBtn.style.display = 'inline-block';
-                logoutBtn.style.display = 'none';
-                
-                // Hide leaderboard
-                document.getElementById('auth-warning').style.display = 'block';
-                document.getElementById('leaderboard-content').style.display = 'none';
-            }
-        });
-    </script>
-
-    <script>
-        const CLOUD_RUN_URL = 'https://anime-ranker-backend-10037187822.us-central1.run.app/api';
-        const API_BASE = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost' 
-            ? 'http://127.0.0.1:8080/api' 
-            : CLOUD_RUN_URL;
         let globalData = [];
         let personalData = [];
 
-        async function fetchLeaderboards(uid) {
+        initAuth(
+            (user) => {
+                document.getElementById('auth-warning').style.display = 'none';
+                document.getElementById('leaderboard-content').style.display = 'block';
+                window.fetchLeaderboards(user.uid);
+            },
+            () => {
+                document.getElementById('auth-warning').style.display = 'block';
+                document.getElementById('leaderboard-content').style.display = 'none';
+            }
+        );
+
+        window.fetchLeaderboards = async function(uid) {
             document.getElementById('loading').style.display = 'block';
             document.getElementById('leaderboard-list').innerHTML = '';
 
@@ -119,14 +77,14 @@
                 personalData = data.personal;
 
                 document.getElementById('loading').style.display = 'none';
-                showList('personal'); // Default to showing personal
+                window.showList('personal'); // Default to showing personal
             } catch (error) {
                 console.error("Error fetching leaderboard:", error);
                 document.getElementById('loading').innerText = "Error loading data.";
             }
-        }
+        };
 
-        function showList(type) {
+        window.showList = function(type) {
             const listEl = document.getElementById('leaderboard-list');
             listEl.innerHTML = ''; // Clear current list
             
@@ -157,9 +115,9 @@
                 `;
                 listEl.appendChild(li);
             });
-        }
+        };
 
-        async function exportTop10() {
+        window.exportTop10 = async function() {
             if (!personalData || personalData.length === 0) {
                 alert("You don't have any ranked shows yet!");
                 return;
@@ -183,7 +141,7 @@
                 console.error("Failed to copy text: ", err);
                 alert("Clipboard copy failed. Please try again.");
             }
-        }
+        };
     </script>
 </body>
 </html>

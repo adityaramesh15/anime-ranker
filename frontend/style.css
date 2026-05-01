@@ -271,7 +271,9 @@ button:active {
     border-radius: 12px;
     padding: 24px 32px;
     margin: 20px auto;
+    width: 100%;
     max-width: 500px;
+    box-sizing: border-box;
     font-size: 1.05rem;
     line-height: 1.5;
 }

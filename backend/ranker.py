@@ -127,6 +127,40 @@ class AnimeRanker:
             "personal": personal_sorted,
         }
     
+    def get_user(self, uid):
+        doc_ref = self.db.collection("users").document(uid)
+        doc = doc_ref.get()
+        if doc.exists:
+            return doc.to_dict()
+        return None
+
+    def set_display_name(self, uid, display_name):
+        display_name_lower = display_name.lower().strip()
+        
+        # Check uniqueness (limit to 1 document to save reads)
+        query = self.db.collection("users").where("display_name_lower", "==", display_name_lower).limit(1).get()
+        if query:
+            # Check if it belongs to the SAME user (in case they are saving the same name)
+            if query[0].id != uid:
+                raise ValueError("Display name already taken.")
+                
+        doc_ref = self.db.collection("users").document(uid)
+        
+        doc = doc_ref.get()
+        if not doc.exists:
+            doc_ref.set({
+                "display_name": display_name.strip(),
+                "display_name_lower": display_name_lower,
+                "total_matches": 0
+            })
+        else:
+            doc_ref.update({
+                "display_name": display_name.strip(),
+                "display_name_lower": display_name_lower
+            })
+        
+        return {"status": "success", "display_name": display_name.strip()}
+
     def ignore_shows(self, uid, anime_ids):
         self._refresh_user_cache_if_needed(uid)
         

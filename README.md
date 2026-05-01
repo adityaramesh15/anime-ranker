@@ -39,6 +39,34 @@ show-ranker/
 └── requirements.txt 
 ```
 
+## DB Structure
+```
+{
+    "global_anime": {
+        "__fields__": [
+            "matches_played",
+            "id",
+            "elo_score",
+            "title"
+        ]
+    },
+    "users": {
+        "__fields__": [
+            "display_name",
+            "total_matches"
+        ],
+        "personal_anime": {
+            "__fields__": [
+                "id",
+                "ignored",
+                "elo_score",
+                "title"
+            ]
+        }
+    }
+}
+```
+
 ## How it Works (The Elo System, Auth & Caching)
 To optimize database reads and stay well within GCP Free Tier limits, the backend utilizes a dual-layer in-memory caching system using standard arrays and `cachetools`.
 

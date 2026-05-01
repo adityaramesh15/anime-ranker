@@ -143,78 +143,39 @@
         
         <span id="user-info" style="margin-left: 20px; color: #888;"></span>
         <button id="login-btn" style="padding: 5px 10px; font-size: 0.9rem;">Login with Google</button>
-        <button id="logout-btn" style="display: none; padding: 5px 10px; font-size: 0.9rem; background-color: #d32f2f;">Logout</button>
+        <a href="account.html" id="profile-link" style="display: none; margin-left: 15px; vertical-align: middle;">
+            <img id="profile-pic" src="" alt="Profile" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--primary-color); object-fit: cover;">
+        </a>
     </nav>
 
     <h1>My Watchlist</h1>
-    <p class="subtitle">Shows you marked as unwatched. Add them back to your ranking pool once you've seen them!</p>
+    <p class="subtitle" id="watchlist-subtitle" style="display: none;">Shows you marked as unwatched. Add them back to your ranking pool once you've seen them!</p>
 
-    <div id="auth-warning" class="auth-warning-box">Please log in to view watchlist!</div>
+    <div id="auth-warning" class="auth-warning-box">Please log in!</div>
     <div id="loading" style="display: none;">Fetching watchlist...</div>
     <div id="show-count" class="show-count" style="display: none;"></div>
     
     <div class="watchlist-grid" id="watchlist-grid"></div>
 
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
-        import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBffsnhQmA8X_AIrhDF7wW6IYUMDH_szPk",
-            authDomain: "show-ranker-project.firebaseapp.com",
-            projectId: "show-ranker-project",
-            storageBucket: "show-ranker-project.firebasestorage.app",
-            messagingSenderId: "10037187822",
-            appId: "1:10037187822:web:5e36fbb62dabe0e2ac8fff",
-            measurementId: "G-675E716Y2L"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const provider = new GoogleAuthProvider();
-
-        const loginBtn = document.getElementById('login-btn');
-        const logoutBtn = document.getElementById('logout-btn');
-        const userInfo = document.getElementById('user-info');
-
-        loginBtn.addEventListener('click', () => {
-            signInWithPopup(auth, provider).catch(error => console.error("Login failed:", error));
-        });
-
-        logoutBtn.addEventListener('click', () => {
-            signOut(auth);
-        });
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                window.currentUserUid = user.uid;
-                const firstName = user.displayName ? user.displayName.split(' ')[0] : 'Guest';
-                userInfo.innerText = `Welcome, ${firstName}!`;
-                loginBtn.style.display = 'none';
-                logoutBtn.style.display = 'inline-block';
-                document.getElementById('auth-warning').style.display = 'none';
-                fetchWatchlist();
-            } else {
-                window.currentUserUid = null;
-                userInfo.innerText = '';
-                loginBtn.style.display = 'inline-block';
-                logoutBtn.style.display = 'none';
-                document.getElementById('auth-warning').style.display = 'block';
-                document.getElementById('watchlist-grid').innerHTML = '';
-                document.getElementById('show-count').style.display = 'none';
-            }
-        });
-    </script>
-
-    <script>
-        const CLOUD_RUN_URL = 'https://anime-ranker-backend-10037187822.us-central1.run.app/api';
-        const API_BASE = window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost' 
-            ? 'http://127.0.0.1:8080/api' 
-            : CLOUD_RUN_URL;
+        import { initAuth } from './js/auth.js';
+        import { API_BASE } from './js/api.js';
 
         let watchlistCount = 0;
 
-        async function fetchWatchlist() {
+        initAuth(
+            (user) => {
+                document.getElementById('watchlist-subtitle').style.display = 'block';
+                window.fetchWatchlist();
+            },
+            () => {
+                document.getElementById('watchlist-grid').innerHTML = '';
+                document.getElementById('show-count').style.display = 'none';
+                document.getElementById('watchlist-subtitle').style.display = 'none';
+            }
+        );
+
+        window.fetchWatchlist = async function() {
             if (!window.currentUserUid) return;
             document.getElementById('loading').style.display = 'block';
             document.getElementById('show-count').style.display = 'none';
@@ -240,7 +201,7 @@
                     return;
                 }
 
-                updateShowCount();
+                window.updateShowCount();
 
                 data.forEach(anime => {
                     const card = document.createElement('div');
@@ -257,15 +218,15 @@
                 console.error("Error fetching watchlist:", error);
                 document.getElementById('loading').innerText = "Error loading watchlist.";
             }
-        }
+        };
 
-        function updateShowCount() {
+        window.updateShowCount = function() {
             const countEl = document.getElementById('show-count');
             countEl.style.display = 'block';
             countEl.innerHTML = `<span>${watchlistCount}</span> show${watchlistCount !== 1 ? 's' : ''} on your watchlist`;
-        }
+        };
 
-        async function unignoreAnime(animeId) {
+        window.unignoreAnime = async function(animeId) {
             if (!window.currentUserUid) return;
             
             // Animate out, then remove
@@ -292,7 +253,7 @@
                     `;
                     document.getElementById('show-count').style.display = 'none';
                 } else {
-                    updateShowCount();
+                    window.updateShowCount();
                 }
             }, 400);
 
@@ -305,9 +266,9 @@
             } catch (error) {
                 console.error("Error un-ignoring:", error);
                 alert("Failed to move back to pool. Please refresh.");
-                fetchWatchlist(); // Re-fetch to restore correct state
+                window.fetchWatchlist(); // Re-fetch to restore correct state
             }
-        }
+        };
     </script>
 </body>
 </html>
