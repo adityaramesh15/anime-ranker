@@ -160,6 +160,50 @@
         .anilist-link:hover {
             color: #a5b4fc; 
         }
+
+        @media (max-width: 680px) {
+            .watchlist-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+                padding: 0 8px;
+                max-width: 640px;
+            }
+
+            .watchlist-card {
+                border-radius: 12px;
+                padding: 10px;
+                display: grid;
+                grid-template-columns: 72px minmax(0, 1fr);
+                column-gap: 10px;
+                row-gap: 8px;
+                align-items: start;
+                text-align: left;
+            }
+
+            .watchlist-card img {
+                grid-row: 1 / 4;
+                width: 72px;
+                height: 104px;
+                margin: 0;
+                border-radius: 8px;
+            }
+
+            .watchlist-card h3 {
+                margin: 0;
+                font-size: 0.95rem;
+                line-height: 1.35;
+            }
+
+            .watchlist-card .add-back-btn,
+            .watchlist-card .favorite-toggle-btn {
+                width: 100%;
+                margin: 0;
+                font-size: 0.82rem;
+                padding: 8px 10px;
+                border-radius: 8px;
+                min-width: 0;
+            }
+        }
     </style>
 </head>
 <body>
